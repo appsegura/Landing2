@@ -55,14 +55,22 @@ export function ProductDemo({ content }: ProductDemoProps) {
         : `https://player.vimeo.com/video/${videoId}`
       : videoUrl;
 
+    // Calculamos la altura máxima para móviles basada en el viewport
+    const maxMobileHeight = Math.min(videoHeight || 400);
+
     return (
       <div
-        className={`relative ${getAspectRatioClass()}`}
-        style={{ height: videoHeight ? `${videoHeight}px` : "auto" }}
+        className={`relative ${getAspectRatioClass()} max-w-full`}
+        style={{
+          height: videoHeight
+            ? `min(${videoHeight}px, ${maxMobileHeight}px)`
+            : "auto",
+          maxHeight: "70vh", // Limita la altura máxima al 70% del viewport
+        }}
       >
         <iframe
           src={embedUrl}
-          className="absolute inset-0 w-full h-full rounded-lg shadow-lg "
+          className="absolute inset-0 w-full h-full rounded-lg shadow-lg"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
@@ -74,13 +82,17 @@ export function ProductDemo({ content }: ProductDemoProps) {
     const textContent = (
       <div className="flex flex-col justify-center">
         {descriptionTitle && (
-          <h3 className="text-2xl font-semibold mb-4">{descriptionTitle}</h3>
+          <h3 className="text-xl md:text-2xl font-semibold mb-4">
+            {descriptionTitle}
+          </h3>
         )}
         {description && (
-          <p className="text-lg text-foreground/80 mb-8">{description}</p>
+          <p className="text-base md:text-lg text-foreground/80 mb-8">
+            {description}
+          </p>
         )}
         {ctaText && ctaUrl && (
-          <div className="flex justify-center">
+          <div className="flex ">
             <Button asChild size="lg">
               <Link href={ctaUrl}>{ctaText}</Link>
             </Button>
@@ -90,13 +102,13 @@ export function ProductDemo({ content }: ProductDemoProps) {
     );
 
     const videoContent = (
-      <div className="w-full md:w-auto flex justify-center items-center">
-        {embedVideo()}
+      <div className="w-full flex justify-center items-center">
+        <div className="w-full max-w-4xl">{embedVideo()}</div>
       </div>
     );
 
     const textContentContainer = (
-      <div className="w-1/2 flex justify-center items-center">
+      <div className="w-full md:w-1/2 flex justify-center items-center">
         {textContent}
       </div>
     );
@@ -104,33 +116,29 @@ export function ProductDemo({ content }: ProductDemoProps) {
     switch (videoPosition) {
       case "left":
         return (
-          <div className="flex flex-col md:flex-row gap-12 justify-center items-center">
-            {videoContent}
+          <div className="flex flex-col md:flex-row gap-8 md:gap-24 justify-center items-center">
+            <div className="">{videoContent}</div>
             {textContentContainer}
           </div>
         );
       case "right":
         return (
-          <div className="flex flex-col md:flex-row gap-24 justify-center items-center">
+          <div className="flex flex-col md:flex-row gap-24 md:gap-24 justify-center items-center">
             {textContentContainer}
-            {videoContent}
+            <div className="">{videoContent}</div>
           </div>
         );
       case "bottom":
         return (
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8 md:gap-12">
             <div className="text-center max-w-3xl mx-auto">{textContent}</div>
-            <div className="flex justify-center max-w-3xl mx-auto w-full">
-              {videoContent}
-            </div>
+            {videoContent}
           </div>
         );
       case "top":
         return (
-          <div className="flex flex-col gap-12">
-            <div className="flex justify-center max-w-3xl mx-auto w-full">
-              {videoContent}
-            </div>
+          <div className="flex flex-col gap-8 md:gap-12">
+            {videoContent}
             <div className="text-center max-w-3xl mx-auto">{textContent}</div>
           </div>
         );
@@ -140,11 +148,17 @@ export function ProductDemo({ content }: ProductDemoProps) {
   };
 
   return (
-    <section className="py-24 relative">
+    <section className="py-12 md:py-24 relative">
       <div className="container mx-auto px-4">
-        <header className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
-          {subtitle && <p className="text-lg text-foreground/60">{subtitle}</p>}
+        <header className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-base md:text-lg text-foreground/60 mt-2">
+              {subtitle}
+            </p>
+          )}
         </header>
         {renderContent()}
       </div>

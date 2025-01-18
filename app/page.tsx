@@ -6,6 +6,7 @@ import { Team } from "@/components/team";
 import { UseCases } from "@/components/use-cases";
 import { Cta } from "@/components/cta";
 import { ProductDemo } from "@/components/product-demo";
+import { Benefits } from "@/components/benefits";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Faq } from "@/components/faq";
@@ -68,6 +69,8 @@ export default async function Home() {
         return <UseCases content={sectionContent} />;
       case "productDemoSection":
         return <ProductDemo content={sectionContent} />;
+      case "benefitsSection":
+        return <Benefits content={sectionContent} />;
       case "ctaSection":
         return <Cta content={sectionContent} />;
       case "footerSection":

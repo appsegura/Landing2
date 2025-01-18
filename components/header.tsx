@@ -16,6 +16,7 @@ export function Header({ content, navigationPages }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { logo, ctaText, ctaUrl, widthLogo } = content;
 
+  // Filtrar las páginas de navegación excluyendo el blog
   const headerPages = navigationPages.filter(
     (page) => page.location === "header" && page.isVisible && page.slug
   );
@@ -36,6 +37,14 @@ export function Header({ content, navigationPages }: HeaderProps) {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
+          {/* Agregar el link al blog de forma permanente */}
+          <Link
+            href="/blog"
+            className="text-foreground/80 hover:text-foreground"
+          >
+            Blog
+          </Link>
+
           {headerPages.map((page) => (
             <Link
               key={page.slug}
@@ -65,6 +74,15 @@ export function Header({ content, navigationPages }: HeaderProps) {
       {isMenuOpen && (
         <div className="md:hidden absolute top-16 w-full bg-background border-b">
           <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+            {/* Agregar el link al blog en el menú móvil */}
+            <Link
+              href="/blog"
+              className="text-foreground/80 hover:text-foreground"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Blog
+            </Link>
+
             {headerPages.map((page) => (
               <Link
                 key={page.slug}

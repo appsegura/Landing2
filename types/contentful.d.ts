@@ -3,6 +3,8 @@ export interface LandingPage {
   slug: string;
   title: string;
   description: string;
+  googleTagManager?: string;
+  valeiaChat?: boolean;
   sections: Array<
     | HeroContent
     | PartnersSection
@@ -11,6 +13,9 @@ export interface LandingPage {
     | TeamSection
     | FaqSection
     | CtaSection
+    | useCasesSection
+    | productDemoSection
+    | BenefitsSection
   >;
   isVisible: boolean;
 }
@@ -18,14 +23,17 @@ export interface LandingPage {
 export interface DynamicPage {
   title: string;
   slug: string;
-  content: any; // Rich Text content from Contentful
+  content: any;
   featuredImage?: {
     url: string;
     title: string;
   };
   isVisible: boolean;
   label: string;
-  location: "header" | "footer" | null;
+  location: "header" | "footer" | "blog" | null;
+  author?: string;
+  publishDate?: string;
+  tags?: string[];
 }
 
 export interface HeaderContent {
@@ -133,6 +141,7 @@ export interface FaqSection {
   subtitle: string;
   faqs: FAQ[];
   isVisible: boolean;
+  columns?: 1 | 2;
 }
 
 export interface CtaSection {
@@ -234,5 +243,45 @@ export interface ProductDemoSection {
   videoHeight: number;
   ctaText?: string;
   ctaUrl?: string;
+  isVisible: boolean;
+}
+
+xport interface Benefit {
+  fields: {
+    title: string;
+    description: string;
+    icon?: {
+      fields: {
+        file: {
+          url: string;
+        };
+        title: string;
+      };
+    };
+    accentColor?: string;
+    seoTitle?: string;
+    seoDescription?: string;
+  };
+  sys: {
+    id: string;
+  };
+}
+
+export interface BenefitsSection {
+  title: string;
+  subtitle?: string;
+  benefits: Benefit[];
+  screenshot?: {
+    fields: {
+      file: {
+        url: string;
+      };
+      title: string;
+    };
+  };
+  screenshotDescription?: string;
+  ctaText?: string;
+  ctaUrl?: string;
+  layout?: "grid" | "split";
   isVisible: boolean;
 }

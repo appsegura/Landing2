@@ -58,7 +58,7 @@ export function Partners({ content }: PartnersProps) {
   const renderLogos = () => {
     const logoElements = logos.map((logo, index) => (
       <div
-        key={`logo-${index}`}
+        key={`logo-${logo.sys.id}-${index}`}
         className="flex items-center justify-center p-4 transition-transform hover:scale-105"
       >
         <img
@@ -72,7 +72,16 @@ export function Partners({ content }: PartnersProps) {
 
     // For scroll mode, we create three sets of logos for smooth infinite scroll
     if (displayMode === "scroll") {
-      return [...logoElements, ...logoElements, ...logoElements];
+      return logoElements.concat(
+        logoElements.map((el, i) => ({
+          ...el,
+          key: `logo-scroll-1-${i}`,
+        })),
+        logoElements.map((el, i) => ({
+          ...el,
+          key: `logo-scroll-2-${i}`,
+        }))
+      );
     }
 
     return logoElements;
@@ -91,7 +100,11 @@ export function Partners({ content }: PartnersProps) {
         <div ref={containerRef} className="overflow-hidden">
           <div
             ref={scrollRef}
-            className={`flex ${displayMode === "scroll" ? "whitespace-nowrap" : "flex-wrap justify-center"}`}
+            className={`flex ${
+              displayMode === "scroll"
+                ? "whitespace-nowrap"
+                : "flex-wrap justify-center"
+            }`}
             style={{
               transition:
                 displayMode === "scroll" ? "transform 0.05s linear" : undefined,
