@@ -2,7 +2,6 @@ import { Hero } from "@/components/hero";
 import { Partners } from "@/components/Partners";
 import { Process } from "@/components/Features";
 import { Pricing } from "@/components/pricing";
-import { Team } from "@/components/team";
 import { UseCases } from "@/components/use-cases";
 import { Cta } from "@/components/cta";
 import { ProductDemo } from "@/components/product-demo";
@@ -10,11 +9,7 @@ import { Benefits } from "@/components/benefits";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Faq } from "@/components/faq";
-import {
-  getNavigationPages,
-  getLegalPages,
-  getLandingPage,
-} from "@/lib/contentful";
+import { getNavigationPages, getLandingPage } from "@/lib/contentful";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,9 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const [navigationPages, legalPages, landingPage] = await Promise.all([
+  const [navigationPages, landingPage] = await Promise.all([
     getNavigationPages(),
-    getLegalPages(),
     getLandingPage(),
   ]);
 
@@ -61,8 +55,7 @@ export default async function Home() {
         return <Process content={sectionContent} />;
       case "pricingSection":
         return <Pricing content={sectionContent} />;
-      case "teamSection":
-        return <Team content={sectionContent} />;
+
       case "faqSection":
         return <Faq content={sectionContent} />;
       case "useCasesSection":
@@ -75,11 +68,7 @@ export default async function Home() {
         return <Cta content={sectionContent} />;
       case "footerSection":
         return (
-          <Footer
-            content={sectionContent}
-            navigationPages={navigationPages}
-            legalPages={legalPages}
-          />
+          <Footer content={sectionContent} navigationPages={navigationPages} />
         );
       default:
         return null;

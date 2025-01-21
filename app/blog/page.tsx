@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   description: "Explora nuestros artículos sobre IA y automatización",
 };
 
+// Add this to make the page dynamic
+export const dynamic = "force-dynamic";
+
 export default async function BlogPage({
   searchParams,
 }: {
@@ -32,7 +35,6 @@ export default async function BlogPage({
     recentBlogs,
     landingPage,
     navigationPages,
-    legalPages,
   ] = await Promise.all([
     getBlogs(page, ITEMS_PER_PAGE),
     getBlogCategories(),
@@ -41,6 +43,7 @@ export default async function BlogPage({
     getNavigationPages(),
     getLegalPages(),
   ]);
+
   if (!landingPage) {
     throw new Error("Required content not found");
   }
@@ -90,7 +93,6 @@ export default async function BlogPage({
         <Footer
           content={footerSection.fields}
           navigationPages={navigationPages}
-          legalPages={legalPages}
         />
       )}
     </>

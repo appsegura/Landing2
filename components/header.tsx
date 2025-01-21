@@ -5,10 +5,10 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { HeaderContent, DynamicPage } from "@/types/contentful";
+import { HeaderSection, DynamicPage } from "@/types/contentful";
 
 interface HeaderProps {
-  content: HeaderContent;
+  content: HeaderSection;
   navigationPages: DynamicPage[];
 }
 

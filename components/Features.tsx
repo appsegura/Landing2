@@ -41,12 +41,17 @@ export function Process({ content }: ProcessProps) {
               }`}
             >
               {row.map((step) => {
-                const Icon = step?.fields?.icon
-                  ? (dynamic(() =>
-                      import("lucide-react").then(
-                        (mod) => mod[step?.fields?.icon as keyof typeof mod]
-                      )
-                    ) as LucideIcon)
+                const Icon = step.fields?.icon
+                  ? dynamic(
+                      () =>
+                        import("lucide-react").then(
+                          (mod) =>
+                            mod[
+                              step.fields.icon as keyof typeof mod
+                            ] as LucideIcon
+                        ),
+                      { ssr: false }
+                    )
                   : null;
 
                 return (

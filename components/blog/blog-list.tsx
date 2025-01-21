@@ -55,8 +55,8 @@ export function BlogList({
             <Link href={`/blog/${blog.slug}`}>
               <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
                 <img
-                  src={`https:${blog.featuredImage.url}`}
-                  alt={blog.featuredImage.title}
+                  src={`https:${blog.featuredImage.fields.file.url}`}
+                  alt={blog.featuredImage.fields.title}
                   className="object-cover"
                 />
               </div>
@@ -89,7 +89,7 @@ export function BlogList({
               ))}
             </div>
             <div className="flex justify-between items-center">
-              <Button asChild variant="link">
+              <Button asChild variant="default">
                 <Link href={`/blog/${blog.slug}`}>Leer más →</Link>
               </Button>
             </div>

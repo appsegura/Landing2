@@ -48,8 +48,8 @@ export function BlogSidebar({
                 {blog.featuredImage && (
                   <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
                     <img
-                      src={`https:${blog.featuredImage.url}`}
-                      alt={blog.featuredImage.title}
+                      src={`https:${blog.featuredImage.fields.file.url}`}
+                      alt={blog.featuredImage.fields.title}
                       className="object-cover w-full h-full transition-transform group-hover:scale-105"
                     />
                   </div>

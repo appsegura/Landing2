@@ -1,3 +1,69 @@
+// Tipos base para los campos de sistema de Contentful
+interface ContentfulSys {
+  space: {
+    sys: {
+      type: "Link";
+      linkType: "Space";
+      id: string;
+    };
+  };
+  id: string;
+  type: string;
+  createdAt: string;
+  updatedAt: string;
+  environment: {
+    sys: {
+      id: string;
+      type: "Link";
+      linkType: "Environment";
+    };
+  };
+  publishedVersion: number;
+  revision: number;
+  contentType: {
+    sys: {
+      type: "Link";
+      linkType: "ContentType";
+      id: string;
+    };
+  };
+  locale: string;
+}
+
+interface ContentfulAsset {
+  metadata: {
+    tags: any[];
+    concepts: any[];
+  };
+  sys: ContentfulSys;
+  fields: {
+    title: string;
+    description: string;
+    file: {
+      url: string;
+      details: {
+        size: number;
+        image?: {
+          width: number;
+          height: number;
+        };
+      };
+      fileName: string;
+      contentType: string;
+    };
+  };
+}
+
+interface ContentfulEntry<T> {
+  metadata: {
+    tags: any[];
+    concepts: any[];
+  };
+  sys: ContentfulSys;
+  fields: T;
+}
+
+// Tipos para cada modelo de contenido
 export interface LandingPage {
   internalName: string;
   slug: string;
@@ -5,129 +71,120 @@ export interface LandingPage {
   description: string;
   googleTagManager?: string;
   valeiaChat?: boolean;
-  sections: Array<
-    | HeroContent
-    | PartnersSection
-    | ProcessSection
-    | PricingSection
-    | TeamSection
-    | FaqSection
-    | CtaSection
-    | useCasesSection
-    | productDemoSection
-    | BenefitsSection
-  >;
+  sections: Array<ContentfulEntry<any>>;
   isVisible: boolean;
 }
 
-export interface DynamicPage {
-  title: string;
-  slug: string;
-  content: any;
-  featuredImage?: {
-    url: string;
-    title: string;
-  };
-  isVisible: boolean;
-  label: string;
-  location: "header" | "footer" | "blog" | null;
-  author?: string;
-  publishDate?: string;
-  tags?: string[];
-}
-
-export interface HeaderContent {
-  logo: {
-    url: string;
-    title: string;
-    width: number;
-    height: number;
-  };
+export interface HeaderSection {
+  logo: ContentfulAsset;
+  widthLogo: number;
   ctaText: string;
   ctaUrl: string;
 }
 
-export interface HeroContent {
+export interface HeroSection {
   title: string;
   highlightedText: string;
   description: string;
   ctaText: string;
   ctaUrl: string;
   isVisible: boolean;
-}
-
-export interface Logo {
-  fields: {
-    file: {
-      url: string;
-    };
-    title: string;
-  };
+  image?: ContentfulAsset;
+  imagePosition?: "right" | "left" | "top" | "bottom" | "background";
+  imageWidth?: number;
 }
 
 export interface PartnersSection {
   title: string;
   subtitle?: string;
-  logos: Logo[];
-  isVisible: boolean;
+  logos: ContentfulAsset[];
   displayMode: "grid" | "scroll";
   scrollSpeed?: number;
   height?: number;
+  isVisible: boolean;
 }
 
 export interface ProcessStep {
   title: string;
   description: string;
   icon: string;
-  ctaText: string;
-  ctaUrl: string;
+  ctaText?: string;
+  ctaUrl?: string;
 }
 
 export interface ProcessSection {
   title: string;
   subtitle: string;
-  steps: ProcessStep[];
+  steps: ContentfulEntry<ProcessStep>[];
   isVisible: boolean;
-}
-
-export interface PlanFeature {
-  text: string;
-  included: boolean;
 }
 
 export interface PricingPlan {
   name: string;
   price: string;
   description: string;
-  features: PlanFeature[];
-  highlighted: boolean;
+  features: string[];
+  highlightedText: boolean;
   promotionalText?: string;
-  ctaText: string;
-  ctaUrl: string;
+  payLinkText: string;
+  payLink: string;
 }
 
 export interface PricingSection {
   title: string;
   subtitle: string;
-  plans: PricingPlan[];
+  plans: ContentfulEntry<PricingPlan>[];
   isVisible: boolean;
 }
 
-export interface TeamMember {
-  name: string;
-  role: string;
-  bio: string;
-  image: {
-    url: string;
-    title: string;
-  };
-  socialLinks?: SocialLink[];
+export interface Benefit {
+  title: string;
+  description: string;
+  icon?: ContentfulAsset;
+  accentColor?: string;
 }
 
-export interface TeamSection {
+export interface BenefitsSection {
   title: string;
-  subtitle: string;
-  members: TeamMember[];
+  subtitle?: string;
+  benefits: ContentfulEntry<Benefit>[];
+  screenshot?: ContentfulAsset;
+  screenshotDescription?: string;
+  ctaText?: string;
+  ctaUrl?: string;
+  layout?: "grid" | "split";
+  isVisible: boolean;
+}
+
+export interface ProductDemoSection {
+  title: string;
+  subtitle?: string;
+  descriptionTitle?: string;
+  description?: string;
+  videoUrl: string;
+  videoPosition: "right" | "left" | "bottom" | "top";
+  aspectRatio: "16:9" | "4:3" | "1:1" | "9:16";
+  videoHeight?: number;
+  ctaText?: string;
+  ctaUrl?: string;
+  isVisible: boolean;
+}
+
+export interface UseCase {
+  name: string;
+  description: Any;
+  icon?: ContentfulAsset;
+  image?: ContentfulAsset;
+  accentColor?: string;
+  imagePosition?: "right" | "left" | "top" | "bottom" | "background";
+  imageWidth?: number;
+  isActive: boolean;
+}
+
+export interface UseCasesSection {
+  title: string;
+  subtitle?: string;
+  cases: ContentfulEntry<UseCase>[];
   isVisible: boolean;
 }
 
@@ -139,9 +196,9 @@ export interface FAQ {
 export interface FaqSection {
   title: string;
   subtitle: string;
-  faqs: FAQ[];
+  faqs: ContentfulEntry<FAQ>[];
+  columns?: number;
   isVisible: boolean;
-  columns?: 1 | 2;
 }
 
 export interface CtaSection {
@@ -160,128 +217,46 @@ export interface SocialLink {
     | "LinkedIn"
     | "YouTube"
     | "WhatsApp"
-    | "Pinterest"
-    | "Snapchat"
-    | "TikTok"
-    | "Reddit";
+    | "TikTok";
   url: string;
 }
 
 export interface FooterSection {
-  logo: {
-    url: string;
-    title: string;
-  };
-  socialLinks: SocialLink[];
+  logo: ContentfulAsset;
+  widthLogo: number;
+  socialLinks: ContentfulEntry<SocialLink>[];
   email: string;
   phone: string;
-
   copyright: string;
   isVisible: boolean;
 }
 
-export interface LegalPage {
+interface RichTextContent {
+  data: Record<string, any>;
+  content: Array<{
+    data: Record<string, any>;
+    content: Array<{
+      data: Record<string, any>;
+      marks: Array<{
+        type: string;
+      }>;
+      value: string;
+      nodeType: string;
+    }>;
+    nodeType: string;
+  }>;
+  nodeType: string;
+}
+
+export interface DynamicPage {
   title: string;
   slug: string;
-  content: any; // Rich Text content from Contentful
+  content: any;
+  featuredImage?: ContentfulAsset;
   isVisible: boolean;
-  label: string;
-  location: "legal";
-}
-
-export interface UseCase {
-  name: string;
-  description: any; // Rich Text content
-  image?: {
-    fields: {
-      file: {
-        url: string;
-        details: {
-          image: {
-            width: number;
-            height: number;
-          };
-        };
-      };
-      title: string;
-    };
-  };
-  icon?: {
-    fields: {
-      file: {
-        url: string;
-      };
-      title: string;
-    };
-  };
-  accentColor?: string;
-  isActive: boolean;
-  seoTitle?: string;
-  seoDescription?: string;
-}
-
-export interface UseCasesSection {
-  title: string;
-  subtitle?: string;
-  cases: {
-    fields: UseCase;
-    sys: {
-      id: string;
-    };
-  }[];
-  isVisible: boolean;
-}
-
-export interface ProductDemoSection {
-  title: string;
-  subtitle?: string;
-  descriptionTitle?: string;
-  description?: string;
-  videoUrl: string;
-  videoPosition: "right" | "left" | "bottom" | "top";
-  aspectRatio: "16:9" | "4:3" | "1:1" | "9:16";
-  videoHeight: number;
-  ctaText?: string;
-  ctaUrl?: string;
-  isVisible: boolean;
-}
-
-xport interface Benefit {
-  fields: {
-    title: string;
-    description: string;
-    icon?: {
-      fields: {
-        file: {
-          url: string;
-        };
-        title: string;
-      };
-    };
-    accentColor?: string;
-    seoTitle?: string;
-    seoDescription?: string;
-  };
-  sys: {
-    id: string;
-  };
-}
-
-export interface BenefitsSection {
-  title: string;
-  subtitle?: string;
-  benefits: Benefit[];
-  screenshot?: {
-    fields: {
-      file: {
-        url: string;
-      };
-      title: string;
-    };
-  };
-  screenshotDescription?: string;
-  ctaText?: string;
-  ctaUrl?: string;
-  layout?: "grid" | "split";
-  isVisible: boolean;
+  label?: string;
+  location: "header" | "footer" | "blog" | "legal" | null;
+  author?: string;
+  publishDate?: string;
+  tags?: string[];
 }

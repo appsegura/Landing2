@@ -3,10 +3,13 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { UseCasesSection } from "@/types/contentful";
 
 interface UseCasesProps {
   content: UseCasesSection;
 }
+
+type ImagePosition = "right" | "left" | "top" | "bottom" | "background";
 
 export function UseCases({ content }: UseCasesProps) {
   const { title, subtitle, cases, isVisible } = content;
@@ -24,14 +27,15 @@ export function UseCases({ content }: UseCasesProps) {
     typeof width === "number" && width > 0 ? width : 400;
 
   // Determine layout classes based on image position
-  const getLayoutClasses = (imagePosition: string = "right") => {
+  const getLayoutClasses = (imagePosition: ImagePosition = "right") => {
     const positions = {
       right: "flex-row-reverse items-center",
       left: "flex-row items-center",
       top: "flex-col items-center",
       bottom: "flex-col-reverse items-center",
+      background: "flex-col items-center",
     };
-    return positions[imagePosition] || "flex-row";
+    return positions[imagePosition];
   };
 
   return (
@@ -136,8 +140,8 @@ export function UseCases({ content }: UseCasesProps) {
                       // Content with positioned image
                       <div
                         className={`flex ${getLayoutClasses(
-                          selectedCaseData.imagePosition
-                        )} items-start gap-6`}
+                          selectedCaseData.imagePosition as ImagePosition
+                        )} gap-6`}
                       >
                         <img
                           src={`https:${selectedCaseData.image.fields.file.url}`}
@@ -163,7 +167,7 @@ export function UseCases({ content }: UseCasesProps) {
                   ) : (
                     // Content without image
                     <div className="prose prose-invert max-w-none">
-                      <div className="text-foreground/80 ">
+                      <div className="text-foreground/80">
                         {documentToReactComponents(
                           selectedCaseData.description
                         )}

@@ -1,9 +1,9 @@
 import { Button } from "./ui/button";
-import { HeroContent } from "@/types/contentful";
+import { HeroSection } from "@/types/contentful";
 import Link from "next/link";
 
 interface HeroProps {
-  content: HeroContent;
+  content: HeroSection;
 }
 
 export function Hero({ content }: HeroProps) {
@@ -31,9 +31,12 @@ export function Hero({ content }: HeroProps) {
     bottom: "flex-col-reverse",
   };
 
-  const layoutClasses = image
-    ? imagePositionClasses[imagePosition] || "md:flex-row"
-    : "";
+  const layoutClasses =
+    image && imagePosition !== "background"
+      ? imagePositionClasses[
+          imagePosition as keyof typeof imagePositionClasses
+        ] || "md:flex-row"
+      : "";
 
   return (
     <section

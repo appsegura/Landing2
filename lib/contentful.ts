@@ -1,6 +1,7 @@
 import { createClient } from "contentful";
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-import { DynamicPage, LegalPage, LandingPage } from "@/types/contentful";
+import { DynamicPage, LandingPage } from "@/types/contentful";
+import { Document } from "@contentful/rich-text-types";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID!,
@@ -19,8 +20,7 @@ export async function getLandingPage(): Promise<LandingPage | null> {
     if (response.items.length === 0) {
       return null;
     }
-
-    return response.items[0].fields as LandingPage;
+    return response.items[0].fields as unknown as LandingPage;
   } catch (error) {
     console.error("Error fetching landing page:", error);
     return null;
@@ -42,43 +42,28 @@ export async function getDynamicPage(
       return null;
     }
 
-    const page = response.items[0].fields as DynamicPage;
-    return {
-      ...page,
-      featuredImage: page.featuredImage?.fields?.file
-        ? {
-            url: page.featuredImage.fields.file.url,
-            title: page.featuredImage.fields.title,
-          }
-        : undefined,
-    };
+    const page = response.items[0].fields as unknown as DynamicPage;
+    return { ...page };
   } catch (error) {
     console.error("Error fetching dynamic page:", error);
     return null;
   }
 }
 
-export async function getLegalPage(slug: string): Promise<LegalPage | null> {
+export async function getLegalPages(): Promise<DynamicPage[]> {
   try {
     const response = await client.getEntries({
-      content_type: "legalPage",
-      "fields.slug": slug,
-      limit: 1,
+      content_type: "dynamicPage",
+      "fields.location": "legal",
+      "fields.isVisible": true,
     });
 
-    if (response.items.length === 0) {
-      return null;
-    }
-
-    const page = response.items[0].fields as LegalPage;
-    if (page.content) {
-      page.content = documentToHtmlString(page.content);
-    }
-
-    return page;
+    return response.items.map((item) => ({
+      ...item.fields,
+    })) as unknown as DynamicPage[];
   } catch (error) {
-    console.error("Error fetching legal page:", error);
-    return null;
+    console.error("Error fetching legal pages:", error);
+    return [];
   }
 }
 
@@ -92,29 +77,9 @@ export async function getNavigationPages(): Promise<DynamicPage[]> {
 
     return response.items.map((item) => ({
       ...item.fields,
-      featuredImage: item.fields.featuredImage?.fields?.file
-        ? {
-            url: item.fields.featuredImage.fields.file.url,
-            title: item.fields.featuredImage.fields.title,
-          }
-        : undefined,
-    })) as DynamicPage[];
+    })) as unknown as DynamicPage[];
   } catch (error) {
     console.error("Error fetching navigation pages:", error);
-    return [];
-  }
-}
-
-export async function getLegalPages(): Promise<LegalPage[]> {
-  try {
-    const response = await client.getEntries({
-      content_type: "legalPage",
-      "fields.isVisible": true,
-    });
-
-    return response.items.map((item) => item.fields as LegalPage);
-  } catch (error) {
-    console.error("Error fetching legal pages:", error);
     return [];
   }
 }
@@ -128,7 +93,6 @@ export async function getBlogs(
       content_type: "dynamicPage",
       "fields.location": "blog",
       "fields.isVisible": true,
-      order: "-fields.publishDate",
       limit,
       skip: (page - 1) * limit,
       include: 2,
@@ -136,13 +100,7 @@ export async function getBlogs(
 
     const blogs = response.items.map((item) => ({
       ...item.fields,
-      featuredImage: item.fields.featuredImage?.fields?.file
-        ? {
-            url: item.fields.featuredImage.fields.file.url,
-            title: item.fields.featuredImage.fields.title,
-          }
-        : undefined,
-    })) as DynamicPage[];
+    })) as unknown as DynamicPage[];
 
     return {
       blogs,
@@ -162,20 +120,13 @@ export async function getRecentBlogs(
       content_type: "dynamicPage",
       "fields.location": "blog",
       "fields.isVisible": true,
-      order: "-fields.publishDate",
       limit,
       include: 2,
     });
 
     return response.items.map((item) => ({
       ...item.fields,
-      featuredImage: item.fields.featuredImage?.fields?.file
-        ? {
-            url: item.fields.featuredImage.fields.file.url,
-            title: item.fields.featuredImage.fields.title,
-          }
-        : undefined,
-    })) as DynamicPage[];
+    })) as unknown as DynamicPage[];
   } catch (error) {
     console.error("Error fetching recent blogs:", error);
     return [];
@@ -188,7 +139,6 @@ export async function getBlogCategories(): Promise<string[]> {
       content_type: "dynamicPage",
       "fields.location": "blog",
       "fields.isVisible": true,
-      select: "fields.tags",
     });
 
     const allTags = response.items.reduce((tags: string[], item: any) => {

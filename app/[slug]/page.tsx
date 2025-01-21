@@ -1,14 +1,14 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import {
   getDynamicPage,
-  getLegalPage,
   getLandingPage,
   getNavigationPages,
   getLegalPages,
 } from "@/lib/contentful";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
 // Esta función es requerida para generar las rutas estáticas
 export async function generateStaticParams() {
@@ -19,7 +19,6 @@ export async function generateStaticParams() {
 
   // Combinar todas las páginas para generar las rutas
   const allPages = [...navigationPages, ...legalPages];
-
   return allPages.map((page) => ({
     slug: page.slug,
   }));
@@ -30,10 +29,9 @@ export default async function DynamicPage({
 }: {
   params: { slug: string };
 }) {
-  const [landingPage, navigationPages, legalPages] = await Promise.all([
+  const [landingPage, navigationPages] = await Promise.all([
     getLandingPage(),
     getNavigationPages(),
-    getLegalPages(),
   ]);
 
   if (!landingPage) {
@@ -49,12 +47,61 @@ export default async function DynamicPage({
   );
 
   // Intentar obtener la página como dinámica o legal
-  const page =
-    (await getDynamicPage(params.slug)) || (await getLegalPage(params.slug));
+  const page = await getDynamicPage(params.slug);
 
   if (!page || !page.isVisible) {
     notFound();
   }
+
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node: any, children: any) => (
+        <p className="mb-4">{children}</p>
+      ),
+      [BLOCKS.HEADING_1]: (node: any, children: any) => (
+        <h1 className="text-4xl font-bold mb-6">{children}</h1>
+      ),
+      [BLOCKS.HEADING_2]: (node: any, children: any) => (
+        <h2 className="text-3xl font-bold mb-4">{children}</h2>
+      ),
+      [BLOCKS.HEADING_3]: (node: any, children: any) => (
+        <h3 className="text-2xl font-bold mb-3">{children}</h3>
+      ),
+      [BLOCKS.UL_LIST]: (node: any, children: any) => (
+        <ul className="list-disc pl-6 mb-4">{children}</ul>
+      ),
+      [BLOCKS.OL_LIST]: (node: any, children: any) => (
+        <ol className="list-decimal pl-6 mb-4">{children}</ol>
+      ),
+      [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
+        <li className="mb-2">{children}</li>
+      ),
+      [BLOCKS.QUOTE]: (node: any, children: any) => (
+        <blockquote className="border-l-4 border-primary pl-4 italic my-4">
+          {children}
+        </blockquote>
+      ),
+      [INLINES.HYPERLINK]: (node: any, children: any) => (
+        <a
+          href={node.data.uri}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          {children}
+        </a>
+      ),
+    },
+    renderMark: {
+      [MARKS.BOLD]: (text: any) => (
+        <strong className="font-bold">{text}</strong>
+      ),
+      [MARKS.ITALIC]: (text: any) => <em className="italic">{text}</em>,
+      [MARKS.CODE]: (text: any) => (
+        <code className="bg-muted px-1.5 py-0.5 rounded">{text}</code>
+      ),
+    },
+  };
 
   return (
     <>
@@ -67,23 +114,19 @@ export default async function DynamicPage({
       <main className="py-24">
         <div className="container mx-auto px-4">
           <article className="prose prose-invert mx-auto">
+            <h1 className="text-4xl font-bold mb-4 mt-4">{page.title}</h1>
             {page.featuredImage && (
-              <div className="mb-8">
-                <Image
-                  src={page.featuredImage.url}
-                  alt={page.featuredImage.title}
-                  width={1200}
-                  height={600}
-                  className="rounded-lg"
+              <div className="relative aspect-video mb-8 rounded-lg overflow-hidden">
+                <img
+                  src={`https:${page.featuredImage.fields.file.url}`}
+                  alt={page.featuredImage.fields.title || page.title || ""}
+                  className="object-cover"
                 />
               </div>
             )}
-            <h1 className="text-4xl font-bold mb-8">{page.title}</h1>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: page.content,
-              }}
-            />
+            <div className="prose prose-invert max-w-none">
+              {page.content && documentToReactComponents(page.content, options)}
+            </div>
           </article>
         </div>
       </main>
@@ -91,7 +134,6 @@ export default async function DynamicPage({
         <Footer
           content={footerSection.fields}
           navigationPages={navigationPages}
-          legalPages={legalPages}
         />
       )}
     </>

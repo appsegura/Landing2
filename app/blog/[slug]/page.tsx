@@ -106,14 +106,9 @@ export default async function BlogPost({
             <h1 className="text-4xl font-bold mb-4">{page.title}</h1>
             {page.featuredImage && (
               <div className="relative aspect-video mb-8 rounded-lg overflow-hidden">
-                <Image
-                  src={`https:${page.featuredImage.fields?.file?.url || page.featuredImage.url}`}
-                  alt={
-                    page.featuredImage.fields?.title ||
-                    page.featuredImage.title ||
-                    ""
-                  }
-                  fill
+                <img
+                  src={`https:${page.featuredImage.fields.file.url}`}
+                  alt={page.featuredImage.fields.title || page.title || ""}
                   className="object-cover"
                 />
               </div>
@@ -138,7 +133,6 @@ export default async function BlogPost({
         <Footer
           content={footerSection.fields}
           navigationPages={navigationPages}
-          legalPages={legalPages}
         />
       )}
     </>

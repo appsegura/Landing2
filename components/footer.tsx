@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FooterSection, DynamicPage, LegalPage } from "@/types/contentful";
+import { FooterSection, DynamicPage } from "@/types/contentful";
 import {
   Facebook,
   Twitter,
@@ -16,7 +16,6 @@ import {
 interface FooterProps {
   content: FooterSection;
   navigationPages: DynamicPage[];
-  legalPages: LegalPage[];
 }
 
 const SOCIAL_ICONS = {
@@ -29,7 +28,7 @@ const SOCIAL_ICONS = {
   TikTok: Music2,
 };
 
-export function Footer({ content, navigationPages, legalPages }: FooterProps) {
+export function Footer({ content, navigationPages }: FooterProps) {
   const { logo, widthLogo, socialLinks, email, phone, copyright, isVisible } =
     content;
 
@@ -39,8 +38,8 @@ export function Footer({ content, navigationPages, legalPages }: FooterProps) {
     (page) => page.location === "footer" && page.isVisible && page.slug
   );
 
-  const validLegalPages = legalPages.filter(
-    (page) => page.isVisible && page.slug
+  const validLegalPages = navigationPages.filter(
+    (page) => page.location === "legal" && page.isVisible && page.slug
   );
 
   return (
