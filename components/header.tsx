@@ -37,14 +37,6 @@ export function Header({ content, navigationPages }: HeaderProps) {
         </Link>
 
         <nav className="hidden md:flex items-center space-x-8">
-          {/* Agregar el link al blog de forma permanente */}
-          <Link
-            href="/blog"
-            className="text-foreground/80 hover:text-foreground"
-          >
-            Blog
-          </Link>
-
           {headerPages.map((page) => (
             <Link
               key={page.slug}
@@ -54,6 +46,13 @@ export function Header({ content, navigationPages }: HeaderProps) {
               {page.label}
             </Link>
           ))}
+          {/* Agregar el link al blog de forma permanente */}
+          <Link
+            href="/blog"
+            className="text-foreground/80 hover:text-foreground"
+          >
+            Blog
+          </Link>
           {ctaUrl && (
             <Button asChild>
               <a href={ctaUrl} target="_blank" rel="noopener noreferrer">
