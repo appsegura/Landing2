@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { useState } from "react";
 import Link from "next/link";
 import { DynamicPage } from "@/types/contentful";
 import { Button } from "@/components/ui/button";
@@ -11,14 +11,12 @@ import { BLOCKS } from "@contentful/rich-text-types";
 interface BlogListProps {
   blogs: DynamicPage[];
   total: number;
-  currentPage: number;
-  itemsPerPage: number;
+  categories: string[];
 }
 
 function getFirstParagraph(content: any): string {
   if (!content || !content.content) return "";
 
-  // Buscar el primer párrafo en el contenido Rich Text
   const firstParagraph = content.content.find(
     (node: any) => node.nodeType === BLOCKS.PARAGRAPH
   );
@@ -33,17 +31,57 @@ function getFirstParagraph(content: any): string {
   return "";
 }
 
-export function BlogList({
-  blogs,
-  total,
-  currentPage,
-  itemsPerPage,
-}: BlogListProps) {
-  const totalPages = Math.ceil(total / itemsPerPage);
+export function BlogList({ blogs, total, categories }: BlogListProps) {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const ITEMS_PER_PAGE = 6;
+
+  // Filtrar blogs por categoría
+  const filteredBlogs = selectedCategory
+    ? blogs.filter((blog) => blog.tags?.includes(selectedCategory))
+    : blogs;
+
+  // Calcular blogs para la página actual
+  const indexOfLastBlog = currentPage * ITEMS_PER_PAGE;
+  const indexOfFirstBlog = indexOfLastBlog - ITEMS_PER_PAGE;
+  const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+  const totalPages = Math.ceil(filteredBlogs.length / ITEMS_PER_PAGE);
 
   return (
     <div className="space-y-8">
-      {blogs.map((blog) => (
+      <div className="flex flex-wrap gap-2 mb-8">
+        <button
+          onClick={() => {
+            setSelectedCategory(null);
+            setCurrentPage(1);
+          }}
+          className={`text-sm px-3 py-1 rounded-full transition-colors ${
+            !selectedCategory
+              ? "bg-primary text-primary-foreground"
+              : "bg-muted hover:bg-muted/80"
+          }`}
+        >
+          Todos
+        </button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => {
+              setSelectedCategory(category);
+              setCurrentPage(1);
+            }}
+            className={`text-sm px-3 py-1 rounded-full transition-colors ${
+              selectedCategory === category
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted hover:bg-muted/80"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {currentBlogs.map((blog) => (
         <article
           key={blog.slug}
           className="card-gradient rounded-lg py-4 px-10 transition-all hover:scale-[1.02]"
@@ -79,13 +117,16 @@ export function BlogList({
             )}
             <div className="flex flex-wrap gap-2">
               {blog.tags?.map((tag) => (
-                <Link
+                <button
                   key={tag}
-                  href={`/blog?category=${encodeURIComponent(tag)}`}
+                  onClick={() => {
+                    setSelectedCategory(tag);
+                    setCurrentPage(1);
+                  }}
                   className="text-sm bg-muted px-3 py-1 rounded-full hover:bg-primary/20 transition-colors"
                 >
                   {tag}
-                </Link>
+                </button>
               ))}
             </div>
             <div className="flex justify-between items-center">
@@ -100,17 +141,17 @@ export function BlogList({
       {totalPages > 1 && (
         <div className="flex justify-center gap-2 mt-8">
           {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-            <Link
+            <button
               key={page}
-              href={`/blog?page=${page}`}
-              className={`px-4 py-2 rounded-lg ${
+              onClick={() => setCurrentPage(page)}
+              className={`px-4 py-2 rounded-lg transition-colors ${
                 currentPage === page
                   ? "bg-primary text-primary-foreground"
                   : "bg-muted hover:bg-muted/80"
               }`}
             >
               {page}
-            </Link>
+            </button>
           ))}
         </div>
       )}

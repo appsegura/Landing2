@@ -105,7 +105,7 @@ export function UseCases({ content }: UseCasesProps) {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className={`bg-muted rounded-lg p-6 relative overflow-hidden ${
+                  className={`card-gradient rounded-lg p-6 relative overflow-hidden ${
                     selectedCaseData.imagePosition === "background"
                       ? "min-h-[400px]"
                       : ""

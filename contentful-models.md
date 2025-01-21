@@ -532,3 +532,62 @@
 1. Revisar periódicamente los enlaces y referencias
 2. Actualizar los help texts según el feedback de los editores
 3. Mantener las validaciones actualizadas según las necesidades del proyecto
+
+# Custom Theme Content Type
+
+Content Type ID: `customTheme`
+
+Fields:
+
+1. `name` (Short text)
+
+   - Required
+   - Help text: "Nombre para identificar este tema personalizado"
+
+2. `primaryColor` (Short text)
+
+   - Required
+   - Pattern: ^#([A-Fa-f0-9]{6})$
+   - Help text: "Color principal para botones y elementos destacados (formato: #RRGGBB)"
+   - Default: "#7c3aed"
+
+3. `accentColor` (Short text)
+
+   - Optional
+   - Pattern: ^#([A-Fa-f0-9]{6})$
+   - Help text: "Color secundario para gradientes (formato: #RRGGBB). Si no se especifica, se usará el color principal"
+
+4. `backgroundColor` (Short text)
+
+   - Required
+   - Pattern: ^#([A-Fa-f0-9]{6})$
+   - Help text: "Color de fondo del sitio (formato: #RRGGBB)"
+   - Default: "#ffffff"
+
+5. `textColor` (Short text)
+
+   - Required
+   - Pattern: ^#([A-Fa-f0-9]{6})$
+   - Help text: "Color del texto principal (formato: #RRGGBB)"
+   - Default: "#000000"
+
+6. `style` (Select)
+
+   - Required
+   - Options:
+     - minimal (Sin efectos visuales)
+     - gradient (Con efectos de gradiente)
+     - glass (Efecto cristal/transparencia)
+   - Default: "gradient"
+   - Help text: "Estilo visual general del sitio"
+
+7. `borderRadius` (Number)
+
+   - Optional
+   - Default: 8
+   - Help text: "Radio de borde en píxeles para elementos redondeados (0-20)"
+   - Validation: Min: 0, Max: 20
+
+8. `preview` (Media - Image)
+   - Optional
+   - Help text: "Vista previa del tema personalizado"

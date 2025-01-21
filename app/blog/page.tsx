@@ -1,21 +1,36 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import {
   getBlogs,
   getBlogCategories,
   getRecentBlogs,
   getLandingPage,
   getNavigationPages,
-  getLegalPages,
 } from "@/lib/contentful";
 import { BlogList } from "@/components/blog/blog-list";
 import { BlogSidebar } from "@/components/blog/blog-sidebar";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { DynamicPage } from "@/types/contentful";
+import { Metadata } from "next";
 
-// Componente de carga
+// Generar metadata dinámica para SEO
+export async function generateMetadata(): Promise<Metadata> {
+  const recentBlogs = await getRecentBlogs(1);
+  const latestBlog = recentBlogs[0];
+
+  return {
+    title: latestBlog
+      ? `Blog - ${latestBlog.title}`
+      : "Blog - Artículos y Noticias",
+    description: latestBlog
+      ? `${latestBlog.title}. Explora nuestros artículos sobre tecnología, innovación y más.`
+      : "Explora nuestros artículos sobre tecnología, innovación y más.",
+  };
+}
+
+// Configurar revalidación cada 24 horas
+export const revalidate = 86400; // 24 horas en segundos
+
+// Loading component
 function LoadingState() {
   return (
     <div className="animate-pulse">
@@ -45,91 +60,26 @@ function LoadingState() {
   );
 }
 
-export default function BlogPage() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState<{
-    blogs: DynamicPage[];
-    total: number;
-    categories: string[];
-    recentBlogs: DynamicPage[];
-    landingPage: any;
-    navigationPages: DynamicPage[];
-  } | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [currentCategory, setCurrentCategory] = useState<string | undefined>();
-  const ITEMS_PER_PAGE = 6;
+export default async function BlogPage() {
+  const [blogs, categories, recentBlogs, landingPage, navigationPages] =
+    await Promise.all([
+      getBlogs(),
+      getBlogCategories(),
+      getRecentBlogs(3),
+      getLandingPage(),
+      getNavigationPages(),
+    ]);
 
-  useEffect(() => {
-    const searchParams = new URLSearchParams(window.location.search);
-    const page = Number(searchParams.get("page")) || 1;
-    const category = searchParams.get("category") || undefined;
-    setCurrentPage(page);
-    setCurrentCategory(category);
-  }, []);
-
-  useEffect(() => {
-    async function loadData() {
-      setIsLoading(true);
-      try {
-        const [
-          blogsData,
-          categories,
-          recentBlogs,
-          landingPage,
-          navigationPages,
-        ] = await Promise.all([
-          getBlogs(currentPage, ITEMS_PER_PAGE),
-          getBlogCategories(),
-          getRecentBlogs(3),
-          getLandingPage(),
-          getNavigationPages(),
-        ]);
-
-        setData({
-          blogs: blogsData.blogs,
-          total: blogsData.total,
-          categories,
-          recentBlogs,
-          landingPage,
-          navigationPages,
-        });
-      } catch (error) {
-        console.error("Error loading blog data:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    loadData();
-  }, [currentPage, currentCategory]);
-
-  if (isLoading || !data) {
-    return (
-      <main className="container mx-auto px-4 py-24">
-        <LoadingState />
-      </main>
-    );
+  if (!landingPage) {
+    return null;
   }
 
-  const {
-    blogs,
-    total,
-    categories,
-    recentBlogs,
-    landingPage,
-    navigationPages,
-  } = data;
-
-  const headerSection = landingPage?.sections?.find(
-    (section: any) => section.sys.contentType.sys.id === "headerSection"
+  const headerSection = landingPage.sections.find(
+    (section) => section.sys.contentType.sys.id === "headerSection"
   );
-  const footerSection = landingPage?.sections?.find(
-    (section: any) => section.sys.contentType.sys.id === "footerSection"
+  const footerSection = landingPage.sections.find(
+    (section) => section.sys.contentType.sys.id === "footerSection"
   );
-
-  const filteredBlogs = currentCategory
-    ? blogs.filter((blog) => blog.tags?.includes(currentCategory))
-    : blogs;
 
   return (
     <>
@@ -145,18 +95,13 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8">
               <BlogList
-                blogs={filteredBlogs}
-                total={total}
-                currentPage={currentPage}
-                itemsPerPage={ITEMS_PER_PAGE}
+                blogs={blogs.blogs}
+                total={blogs.total}
+                categories={categories}
               />
             </div>
             <div className="lg:col-span-4">
-              <BlogSidebar
-                categories={categories}
-                recentBlogs={recentBlogs}
-                selectedCategory={currentCategory}
-              />
+              <BlogSidebar categories={categories} recentBlogs={recentBlogs} />
             </div>
           </div>
         </div>

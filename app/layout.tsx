@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { getLandingPage } from "@/lib/contentful";
 import { Metadata } from "next";
 import Script from "next/script";
+import { themeConfigs } from "@/lib/theme-config";
+import { hexToHSL, generateGradients } from "@/lib/color-utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,6 +71,43 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   const gtmId = landingPage?.googleTagManager;
   const valeiaChat = landingPage?.valeiaChat || false;
 
+  // Determinar el tema a usar
+  let themeConfig = themeConfigs["defaultDark"]; // Tema por defecto
+
+  if (landingPage?.customTheme?.fields) {
+    const customTheme = landingPage.customTheme.fields;
+    const gradients = generateGradients(
+      customTheme.primaryColor,
+      customTheme.accentColor || customTheme.primaryColor
+    );
+
+    themeConfig = {
+      background: hexToHSL(customTheme.backgroundColor),
+      foreground: hexToHSL(customTheme.textColor),
+      primary: hexToHSL(customTheme.primaryColor),
+      primaryForeground: "0 0% 100%",
+      muted: hexToHSL(customTheme.backgroundColor),
+      mutedForeground: hexToHSL(customTheme.textColor),
+      accent: hexToHSL(customTheme.accentColor || customTheme.primaryColor),
+      accentForeground: "0 0% 100%",
+      border: hexToHSL(customTheme.backgroundColor),
+      cardGradient:
+        customTheme.style === "glass"
+          ? "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))"
+          : customTheme.style === "gradient"
+            ? gradients.cardGradient
+            : "none",
+      textGradient:
+        customTheme.style === "minimal" ? "none" : gradients.textGradient,
+      backgroundGradient:
+        customTheme.style === "minimal" ? "none" : gradients.backgroundGradient,
+    };
+  } else if (landingPage?.theme) {
+    themeConfig = themeConfigs[landingPage.theme];
+  }
+
+  const borderRadius = landingPage?.customTheme?.fields?.borderRadius || 8;
+
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
@@ -83,6 +122,25 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             `}
           </Script>
         )}
+        <style>
+          {`
+            :root {
+              --background: ${themeConfig.background};
+              --foreground: ${themeConfig.foreground};
+              --primary: ${themeConfig.primary};
+              --primary-foreground: ${themeConfig.primaryForeground};
+              --muted: ${themeConfig.muted};
+              --muted-foreground: ${themeConfig.mutedForeground};
+              --accent: ${themeConfig.accent};
+              --accent-foreground: ${themeConfig.accentForeground};
+              --border: ${themeConfig.border};
+              --card-gradient: ${themeConfig.cardGradient};
+              --text-gradient: ${themeConfig.textGradient};
+              --background-gradient: ${themeConfig.backgroundGradient};
+              --radius: ${borderRadius}px;
+            }
+          `}
+        </style>
       </head>
       <body className={inter.className}>
         {gtmId && (

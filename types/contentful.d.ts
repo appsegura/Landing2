@@ -64,11 +64,42 @@ interface ContentfulEntry<T> {
 }
 
 // Tipos para cada modelo de contenido
+export type Theme =
+  | "defaultLight"
+  | "defaultDark"
+  | "cosmicLight"
+  | "cosmicDark"
+  | "midnightLight"
+  | "midnightDark"
+  | "sunsetLight"
+  | "sunsetDark"
+  | "forestLight"
+  | "forestDark"
+  | "oceanLight"
+  | "oceanDark"
+  | "auroraLight"
+  | "aurora"
+  | "sepia"
+  | "moonlight";
+
+export interface CustomTheme {
+  name: string;
+  primaryColor: string;
+  accentColor?: string;
+  backgroundColor: string;
+  textColor: string;
+  style: "minimal" | "gradient" | "glass";
+  borderRadius?: number;
+  preview?: ContentfulAsset;
+}
+
 export interface LandingPage {
   internalName: string;
   slug: string;
   title: string;
   description: string;
+  theme: Theme;
+  customTheme?: ContentfulEntry<CustomTheme>;
   googleTagManager?: string;
   valeiaChat?: boolean;
   sections: Array<ContentfulEntry<any>>;

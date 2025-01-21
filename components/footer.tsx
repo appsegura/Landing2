@@ -43,7 +43,7 @@ export function Footer({ content, navigationPages }: FooterProps) {
   );
 
   return (
-    <footer className="bg-muted py-12">
+    <footer className="card-gradient py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
@@ -142,7 +142,11 @@ export function Footer({ content, navigationPages }: FooterProps) {
         </div>
 
         <div className="border-t border-border pt-8">
-          <p className="text-center text-foreground/60">{copyright}</p>
+          <p className="text-center text-foreground/60">
+            {/*copyright*/}2025 desarrollado con Go lean por Whitelabel,
+            derechos reservados © Diseñado con pasión para impulsar tu
+            crecimiento.
+          </p>
         </div>
       </div>
     </footer>
