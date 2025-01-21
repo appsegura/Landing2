@@ -505,33 +505,6 @@
   - Optional
   - **Help text**: "Categorías o etiquetas para clasificar el contenido"
 
-#### 📄 Legal Page
-
-**Content Type ID:** `legalPage` **Descripción:** Páginas legales como términos y condiciones o política de privacidad.
-
-- `title` (Short text)
-  - Required
-  - **Help text**: "Título de la página legal"
-- `slug` (Short text)
-  - Required
-  - Pattern: ^[a-z0-9-]+$
-  - Unique
-  - **Help text**: "URL amigable para la página legal"
-- `content` (Rich Text)
-  - Required
-  - **Help text**: "Contenido legal completo"
-- `isVisible` (Boolean)
-  - Required
-  - Default: true
-  - **Help text**: "Controla la visibilidad de la página"
-- `label` (Short text)
-  - Required
-  - **Help text**: "Texto para el footer"
-- `location` (Short text)
-  - Required
-  - Default: 'legal'
-  - **Help text**: "Mantener como 'legal' para el footer"
-
 ## 📝 Notas de Implementación
 
 ### Validaciones Importantes
