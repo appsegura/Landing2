@@ -12,7 +12,7 @@
         "id": "dynamicPage",
         "type": "ContentType",
         "createdAt": "2025-01-08T17:26:56.284Z",
-        "updatedAt": "2025-01-17T00:25:29.203Z",
+        "updatedAt": "2025-01-21T04:21:57.125Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -20,8 +20,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 13,
-        "publishedAt": "2025-01-17T00:25:29.203Z",
+        "publishedVersion": 15,
+        "publishedAt": "2025-01-21T04:21:57.125Z",
         "firstPublishedAt": "2025-01-08T17:26:56.886Z",
         "createdBy": {
           "sys": {
@@ -37,8 +37,8 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "publishedCounter": 7,
-        "version": 14,
+        "publishedCounter": 8,
+        "version": 16,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -49,8 +49,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/dynamicPage"
       },
       "displayField": "title",
-      "name": "\ud83d\udcc4 Dynamic Page",
-      "description": "P\u00e1ginas din\u00e1micas que pueden ser enlazadas desde el header o footer",
+      "name": "📄 Dynamic Page",
+      "description": "Páginas dinámicas que pueden ser enlazadas desde el header o footer",
       "fields": [
         {
           "id": "title",
@@ -58,10 +58,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "slug",
@@ -75,8 +75,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Slug seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "featuredImage",
@@ -84,11 +83,11 @@
           "type": "Link",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Featured Image seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "content",
@@ -132,12 +131,12 @@
               "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
             },
             {
-              "nodes": {}
+              "nodes": {
+              }
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Content seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -145,13 +144,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo is Visible? seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "label",
@@ -159,10 +158,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Label seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "location",
@@ -176,13 +175,13 @@
                 "header",
                 "footer",
                 "blog",
+                "legal",
                 "null"
               ]
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Location seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "author",
@@ -190,10 +189,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Author seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "publishDate",
@@ -201,10 +200,10 @@
           "type": "Date",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo PublishDate seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "tags",
@@ -212,14 +211,15 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Symbol",
-            "validations": []
-          },
-          "message": "Ayuda: Personaliza el campo Tags seg\u00fan tus necesidades."
+            "validations": [
+            ]
+          }
         }
       ]
     },
@@ -272,7 +272,7 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/socialLink"
       },
       "displayField": "redSocial",
-      "name": "\ud83d\udcf1 Social Link",
+      "name": "📱 Social Link",
       "description": "",
       "fields": [
         {
@@ -295,8 +295,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Red Social seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "url",
@@ -314,184 +313,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Url seg\u00fan tus necesidades."
-        }
-      ]
-    },
-    {
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6jlrlv1l95yr"
-          }
-        },
-        "id": "legalPage",
-        "type": "ContentType",
-        "createdAt": "2025-01-08T21:22:13.229Z",
-        "updatedAt": "2025-01-08T21:22:13.647Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 1,
-        "publishedAt": "2025-01-08T21:22:13.647Z",
-        "firstPublishedAt": "2025-01-08T21:22:13.647Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "2jMmlSadkcJaP9vOQIjHfm"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "2jMmlSadkcJaP9vOQIjHfm"
-          }
-        },
-        "publishedCounter": 1,
-        "version": 2,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "2jMmlSadkcJaP9vOQIjHfm"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/legalPage"
-      },
-      "displayField": "title",
-      "name": "\ud83d\udcc4 Legal Page",
-      "description": "P\u00e1ginas legales como t\u00e9rminos y condiciones, pol\u00edtica de privacidad, etc.",
-      "fields": [
-        {
-          "id": "title",
-          "name": "Title",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
-        },
-        {
-          "id": "content",
-          "name": "Content",
-          "type": "RichText",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "enabledMarks": [
-                "bold",
-                "italic",
-                "underline",
-                "code",
-                "superscript",
-                "subscript",
-                "strikethrough"
-              ],
-              "message": "Only bold, italic, underline, code, superscript, subscript, and strikethrough marks are allowed"
-            },
-            {
-              "enabledNodeTypes": [
-                "heading-1",
-                "heading-2",
-                "heading-3",
-                "heading-4",
-                "heading-5",
-                "heading-6",
-                "ordered-list",
-                "unordered-list",
-                "hr",
-                "blockquote",
-                "embedded-entry-block",
-                "embedded-asset-block",
-                "table",
-                "asset-hyperlink",
-                "embedded-entry-inline",
-                "entry-hyperlink",
-                "hyperlink"
-              ],
-              "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, asset, table, link to asset, inline entry, link to entry, and link to Url nodes are allowed"
-            },
-            {
-              "nodes": {}
-            }
-          ],
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Content seg\u00fan tus necesidades."
-        },
-        {
-          "id": "isVisible",
-          "name": "isVisible",
-          "type": "Boolean",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "defaultValue": {
-            "en-US": true
-          },
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
-        },
-        {
-          "id": "label",
-          "name": "label",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo label seg\u00fan tus necesidades."
-        },
-        {
-          "id": "slug",
-          "name": "Slug",
-          "type": "Symbol",
-          "localized": false,
-          "required": true,
-          "validations": [
-            {
-              "regexp": {
-                "pattern": "^[a-z0-9-]+$",
-                "flags": null
-              },
-              "message": "solo min\u00fasculas, n\u00fameros y guiones"
-            }
-          ],
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Slug seg\u00fan tus necesidades."
-        },
-        {
-          "id": "location",
-          "name": "Location",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [
-            {
-              "in": [
-                "legal"
-              ],
-              "message": "Siempre 'legal' para estas p\u00e1ginas ya que se muestra en la secci\u00f3n Legal"
-            }
-          ],
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Location seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -544,8 +366,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/headerSection"
       },
       "displayField": "ctaText",
-      "name": "\ud83c\udd70\ufe0f Navbar",
-      "description": "Configuraci\u00f3n La Barra de Navegacion",
+      "name": "🅰️ Navbar",
+      "description": "Configuración La Barra de Navegacion",
       "fields": [
         {
           "id": "logo",
@@ -558,20 +380,19 @@
               "linkMimetypeGroup": [
                 "image"
               ],
-              "message": "Solo puedes agregar Im\u00e1genes "
+              "message": "Solo puedes agregar Imágenes "
             },
             {
               "assetFileSize": {
                 "min": null,
                 "max": 512000
               },
-              "message": "la imagen debe pesar M\u00e1ximo 500 kb"
+              "message": "la imagen debe pesar Máximo 500 kb"
             }
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Logo seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "widthLogo",
@@ -579,10 +400,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Width Logo seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaText",
@@ -590,10 +411,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo ctaText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaUrl",
@@ -610,8 +431,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaUrl seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -627,7 +447,7 @@
         "id": "footerSection",
         "type": "ContentType",
         "createdAt": "2025-01-08T21:47:12.570Z",
-        "updatedAt": "2025-01-13T16:56:00.008Z",
+        "updatedAt": "2025-01-21T21:44:23.763Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -635,8 +455,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 7,
-        "publishedAt": "2025-01-13T16:56:00.008Z",
+        "publishedVersion": 15,
+        "publishedAt": "2025-01-21T21:44:23.763Z",
         "firstPublishedAt": "2025-01-08T21:47:13.066Z",
         "createdBy": {
           "sys": {
@@ -652,8 +472,8 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "publishedCounter": 4,
-        "version": 8,
+        "publishedCounter": 8,
+        "version": 16,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -664,8 +484,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/footerSection"
       },
       "displayField": "email",
-      "name": "\ud83d\udc63 Footer Section",
-      "description": "Configuraci\u00f3n del pie de p\u00e1gina",
+      "name": "👣 Footer Section",
+      "description": "Configuración del pie de página",
       "fields": [
         {
           "id": "logo",
@@ -682,8 +502,7 @@
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Logo seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "widthLogo",
@@ -691,10 +510,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Width Logo seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "socialLinks",
@@ -702,7 +521,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -715,8 +535,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Social Links seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "email",
@@ -734,8 +553,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Email seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "phone",
@@ -743,21 +561,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Phone seg\u00fan tus necesidades."
-        },
-        {
-          "id": "copyright",
-          "name": "Copyright",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Copyright seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -765,13 +572,27 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
+        },
+        {
+          "id": "copyright",
+          "name": "Copyright",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "defaultValue": {
+            "en-US": "© 2025 Go-Lean. Todos los derechos reservados. Diseñado con pasión para impulsar tu crecimiento"
+          },
+          "disabled": false,
+          "omitted": false
         }
       ]
     },
@@ -824,8 +645,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/heroSection"
       },
       "displayField": "title",
-      "name": "\ud83e\uddb8 Hero Section",
-      "description": "Secci\u00f3n principal de la p\u00e1gina de inicio",
+      "name": "🦸 Hero Section",
+      "description": "Sección principal de la página de inicio",
       "fields": [
         {
           "id": "title",
@@ -833,10 +654,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "highlightedText",
@@ -844,10 +665,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo HighlightedText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -855,10 +676,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaText",
@@ -866,10 +687,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaUrl",
@@ -877,10 +698,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaUrl seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -888,13 +709,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "image",
@@ -911,8 +732,7 @@
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Image seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "imagePosition",
@@ -932,8 +752,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Image Position seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "imageWidth",
@@ -941,10 +760,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Image Width seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -997,8 +816,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/ctaSection"
       },
       "displayField": "title",
-      "name": "\ud83c\udfaf CTA Section",
-      "description": "Secci\u00f3n final de llamada a la acci\u00f3n.",
+      "name": "🎯 CTA Section",
+      "description": "Sección final de llamada a la acción.",
       "fields": [
         {
           "id": "title",
@@ -1006,10 +825,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -1017,10 +836,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaText",
@@ -1028,10 +847,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaUrl",
@@ -1039,10 +858,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaUrl seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -1050,13 +869,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1109,7 +928,7 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/processStep"
       },
       "displayField": "title",
-      "name": "\ud83d\udd04 Process Step",
+      "name": "🔄 Process Step",
       "description": "Representa un paso en el proceso",
       "fields": [
         {
@@ -1118,10 +937,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -1129,10 +948,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "icon",
@@ -1150,8 +969,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Icon seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaText",
@@ -1159,10 +977,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaUrl",
@@ -1179,8 +997,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaUrl seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1233,8 +1050,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/processSection"
       },
       "displayField": "title",
-      "name": "\ud83d\udcc8 Features Section",
-      "description": "Secci\u00f3n que explica el proceso o metodolog\u00eda.",
+      "name": "📈 Features Section",
+      "description": "Sección que explica el proceso o metodología.",
       "fields": [
         {
           "id": "title",
@@ -1242,10 +1059,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -1253,10 +1070,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "steps",
@@ -1264,7 +1081,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -1277,8 +1095,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Steps seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "isVisible",
@@ -1286,13 +1103,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1345,7 +1162,7 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/pricingPlan"
       },
       "displayField": "name",
-      "name": "\ud83d\udc8e Pricing Plan",
+      "name": "💎 Pricing Plan",
       "description": "Define un plan de precios.",
       "fields": [
         {
@@ -1354,10 +1171,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Name seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "price",
@@ -1365,10 +1182,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Price seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -1376,10 +1193,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "features",
@@ -1387,14 +1204,15 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
             "type": "Symbol",
-            "validations": []
-          },
-          "message": "Ayuda: Personaliza el campo Features seg\u00fan tus necesidades."
+            "validations": [
+            ]
+          }
         },
         {
           "id": "payLinkText",
@@ -1402,10 +1220,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo PayLinkText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "payLink",
@@ -1422,8 +1240,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo PayLink seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "highlightedText",
@@ -1431,10 +1248,10 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo HighlightedText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "promotionalText",
@@ -1442,10 +1259,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Promotional Text seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1498,8 +1315,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/pricingSection"
       },
       "displayField": "title",
-      "name": "\ud83d\udcb0 Pricing Section",
-      "description": "Secci\u00f3n de planes y precios.",
+      "name": "💰 Pricing Section",
+      "description": "Sección de planes y precios.",
       "fields": [
         {
           "id": "title",
@@ -1507,10 +1324,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -1518,10 +1335,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "plans",
@@ -1529,7 +1346,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -1542,8 +1360,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Plans seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "isVisible",
@@ -1551,13 +1368,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1573,7 +1390,7 @@
         "id": "landingPage",
         "type": "ContentType",
         "createdAt": "2025-01-09T05:46:09.539Z",
-        "updatedAt": "2025-01-18T14:51:28.397Z",
+        "updatedAt": "2025-01-21T21:34:40.751Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -1581,8 +1398,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 21,
-        "publishedAt": "2025-01-18T14:51:28.397Z",
+        "publishedVersion": 37,
+        "publishedAt": "2025-01-21T21:34:40.751Z",
         "firstPublishedAt": "2025-01-09T05:46:10.123Z",
         "createdBy": {
           "sys": {
@@ -1598,8 +1415,8 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "publishedCounter": 11,
-        "version": 22,
+        "publishedCounter": 19,
+        "version": 38,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -1610,8 +1427,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/landingPage"
       },
       "displayField": "internalName",
-      "name": "\ud83d\udcdc Landing page",
-      "description": "Configuraci\u00f3n principal de la p\u00e1gina de inicio.",
+      "name": "📜 Landing page",
+      "description": "Configuración principal de la página de inicio.",
       "fields": [
         {
           "id": "internalName",
@@ -1619,10 +1436,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo InternalName seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "slug",
@@ -1630,10 +1447,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Slug seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "title",
@@ -1641,10 +1458,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Seo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -1652,10 +1469,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Seo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "googleTagManager",
@@ -1663,10 +1480,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Google Tag Manager seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "valeiaChat",
@@ -1674,13 +1491,61 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "theme",
+          "name": "Theme",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "defaultLight",
+                "defaultDark",
+                "cosmicLight",
+                "cosmicDark",
+                "midnightLight",
+                "midnightDark",
+                "sunsetLight",
+                "sunsetDark",
+                "forestLight",
+                "forestDark",
+                "oceanLight",
+                "oceanDark",
+                "auroraLight",
+                "aurora",
+                "sepia",
+                "moonlight"
+              ]
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "customTheme",
+          "name": "CustomTheme",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkContentType": [
+                "customTheme"
+              ]
+            }
+          ],
+          "disabled": false,
           "omitted": false,
-          "message": "Ayuda: Personaliza el campo ValeiaChat seg\u00fan tus necesidades."
+          "linkType": "Entry"
         },
         {
           "id": "sections",
@@ -1688,7 +1553,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -1711,8 +1577,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Sections seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "isVisible",
@@ -1720,13 +1585,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1779,8 +1644,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/faqSection"
       },
       "displayField": "title",
-      "name": "\u2753 FAQ Section",
-      "description": "Secci\u00f3n de preguntas frecuentes.",
+      "name": "❓ FAQ Section",
+      "description": "Sección de preguntas frecuentes.",
       "fields": [
         {
           "id": "title",
@@ -1788,10 +1653,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -1799,10 +1664,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "faqs",
@@ -1810,7 +1675,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -1823,8 +1689,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Faqs seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "columns",
@@ -1844,8 +1709,7 @@
             "en-US": 1
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Columns seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -1853,13 +1717,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1912,7 +1776,7 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/faq"
       },
       "displayField": "question",
-      "name": "\u2754 FAQ",
+      "name": "❔ FAQ",
       "description": "Pregunta frecuente individual",
       "fields": [
         {
@@ -1921,10 +1785,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Question seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "answer",
@@ -1932,10 +1796,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Answer seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -1988,8 +1852,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/partnersSection"
       },
       "displayField": "title",
-      "name": "\ud83e\udd1d Partners Section",
-      "description": "Secci\u00f3n que muestra los logos de partners o clientes",
+      "name": "🤝 Partners Section",
+      "description": "Sección que muestra los logos de partners o clientes",
       "fields": [
         {
           "id": "title",
@@ -1997,10 +1861,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -2008,10 +1872,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "logos",
@@ -2019,7 +1883,8 @@
           "type": "Array",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -2033,8 +1898,7 @@
               }
             ],
             "linkType": "Asset"
-          },
-          "message": "Ayuda: Personaliza el campo Logos seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "displayMode",
@@ -2051,8 +1915,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Display Mode seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "scrollSpeed",
@@ -2060,10 +1923,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Scroll Speed seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "height",
@@ -2071,10 +1934,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Height seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -2082,13 +1945,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Is Visible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -2141,7 +2004,7 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/useCase"
       },
       "displayField": "name",
-      "name": "\ud83d\udccb Use Case",
+      "name": "📋 Use Case",
       "description": "Define un caso de uso individual",
       "fields": [
         {
@@ -2150,10 +2013,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Name seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -2197,12 +2060,12 @@
               "message": "Only heading 1, heading 2, heading 3, heading 4, heading 5, heading 6, ordered list, unordered list, horizontal rule, quote, block entry, table, link to asset, inline entry, link to entry, link to Url, and asset nodes are allowed"
             },
             {
-              "nodes": {}
+              "nodes": {
+              }
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "icon",
@@ -2219,8 +2082,7 @@
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Icon seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "accentColor",
@@ -2240,8 +2102,7 @@
             "en-US": "#"
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Accent Color seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "image",
@@ -2258,8 +2119,7 @@
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Image seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "imagePosition",
@@ -2278,8 +2138,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Image Position seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "imageWidth",
@@ -2287,10 +2146,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Image Width seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isActive",
@@ -2298,13 +2157,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isActive seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "seoTitle",
@@ -2312,10 +2171,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Seo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "seoDescription",
@@ -2323,10 +2182,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Seo Description seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -2379,8 +2238,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/useCasesSection"
       },
       "displayField": "title",
-      "name": "\ud83d\udcca Use Cases Section",
-      "description": "Secci\u00f3n que muestra casos de uso interactivos",
+      "name": "📊 Use Cases Section",
+      "description": "Sección que muestra casos de uso interactivos",
       "fields": [
         {
           "id": "title",
@@ -2388,10 +2247,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -2399,10 +2258,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "cases",
@@ -2410,7 +2269,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -2423,8 +2283,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Cases seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "isVisible",
@@ -2432,13 +2291,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -2491,8 +2350,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/productDemoSection"
       },
       "displayField": "title",
-      "name": "\ud83c\udfa5 Product Demo Section",
-      "description": "Secci\u00f3n que muestra un video o showcase interactivo del producto.",
+      "name": "🎥 Product Demo Section",
+      "description": "Sección que muestra un video o showcase interactivo del producto.",
       "fields": [
         {
           "id": "title",
@@ -2500,10 +2359,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -2511,10 +2370,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "descriptionTitle",
@@ -2522,10 +2381,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo DescriptionTitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -2533,10 +2392,10 @@
           "type": "Text",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "videoUrl",
@@ -2544,10 +2403,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo VideoUrl seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "aspectRatio",
@@ -2569,8 +2428,7 @@
             "en-US": "16:9"
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo AspectRatio seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "videoPosition",
@@ -2591,8 +2449,7 @@
             "en-US": "right"
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo VideoPosition seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "videoHeight",
@@ -2600,10 +2457,10 @@
           "type": "Integer",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo VideoHeight seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaText",
@@ -2611,10 +2468,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaUrl",
@@ -2631,8 +2488,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaUrl seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -2640,13 +2496,13 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo isVisible seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -2699,8 +2555,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/benefit"
       },
       "displayField": "title",
-      "name": "\ud83c\udf81 Benefit",
-      "description": "Secci\u00f3n que destaca los beneficios clave del producto.",
+      "name": "🎁 Benefit",
+      "description": "Sección que destaca los beneficios clave del producto.",
       "fields": [
         {
           "id": "title",
@@ -2708,10 +2564,10 @@
           "type": "Symbol",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "description",
@@ -2719,10 +2575,10 @@
           "type": "Text",
           "localized": false,
           "required": true,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Description seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "icon",
@@ -2739,8 +2595,7 @@
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Icon seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "accentColor",
@@ -2757,8 +2612,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo AccentColor seg\u00fan tus necesidades."
+          "omitted": false
         }
       ]
     },
@@ -2811,8 +2665,8 @@
         "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/benefitsSection"
       },
       "displayField": "title",
-      "name": "\ud83c\udfaf Benefits Section",
-      "description": "Secci\u00f3n que destaca los beneficios clave del producto",
+      "name": "🎯 Benefits Section",
+      "description": "Sección que destaca los beneficios clave del producto",
       "fields": [
         {
           "id": "title",
@@ -2820,10 +2674,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Title seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "subtitle",
@@ -2831,10 +2685,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Subtitle seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "benefits",
@@ -2842,7 +2696,8 @@
           "type": "Array",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
           "omitted": false,
           "items": {
@@ -2855,8 +2710,7 @@
               }
             ],
             "linkType": "Entry"
-          },
-          "message": "Ayuda: Personaliza el campo Benefits seg\u00fan tus necesidades."
+          }
         },
         {
           "id": "screenshot",
@@ -2873,8 +2727,7 @@
           ],
           "disabled": false,
           "omitted": false,
-          "linkType": "Asset",
-          "message": "Ayuda: Personaliza el campo Screenshot seg\u00fan tus necesidades."
+          "linkType": "Asset"
         },
         {
           "id": "screenshotDescription",
@@ -2882,10 +2735,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo ScreenshotDescription seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaText",
@@ -2893,10 +2746,10 @@
           "type": "Symbol",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaText seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "ctaUrl",
@@ -2913,8 +2766,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo CtaUrl seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "layout",
@@ -2931,8 +2783,7 @@
             }
           ],
           "disabled": false,
-          "omitted": false,
-          "message": "Ayuda: Personaliza el campo Layout seg\u00fan tus necesidades."
+          "omitted": false
         },
         {
           "id": "isVisible",
@@ -2940,18 +2791,209 @@
           "type": "Boolean",
           "localized": false,
           "required": false,
-          "validations": [],
+          "validations": [
+          ],
           "defaultValue": {
             "en-US": true
           },
           "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6jlrlv1l95yr"
+          }
+        },
+        "id": "customTheme",
+        "type": "ContentType",
+        "createdAt": "2025-01-21T19:40:13.082Z",
+        "updatedAt": "2025-01-21T20:35:35.490Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 7,
+        "publishedAt": "2025-01-21T20:35:35.490Z",
+        "firstPublishedAt": "2025-01-21T19:40:13.491Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "publishedCounter": 4,
+        "version": 8,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/content_types/customTheme"
+      },
+      "displayField": "name",
+      "name": "CustomTheme",
+      "description": "",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "primaryColor",
+          "name": "PrimaryColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^#([A-Fa-f0-9]{6})$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "accentColor",
+          "name": "AccentColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^#([A-Fa-f0-9]{6})$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "backgroundColor",
+          "name": "BackgroundColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^#([A-Fa-f0-9]{6})$",
+                "flags": null
+              },
+              "message": "Solo se admite formato Hexagesimal"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "textColor",
+          "name": "TextColor",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "regexp": {
+                "pattern": "^#([A-Fa-f0-9]{6})$",
+                "flags": null
+              }
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "style",
+          "name": "Style",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "in": [
+                "minimal",
+                "gradient",
+                "glass"
+              ]
+            }
+          ],
+          "defaultValue": {
+            "en-US": "gradient"
+          },
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "borderRadius",
+          "name": "BorderRadius",
+          "type": "Integer",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "range": {
+                "min": 0,
+                "max": 20
+              },
+              "message": "Min: 0, Max: 20"
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "preview",
+          "name": "Preview",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [
+            {
+              "linkMimetypeGroup": [
+                "image"
+              ]
+            }
+          ],
+          "disabled": false,
           "omitted": false,
-          "message": "Ayuda: Personaliza el campo IsVisible seg\u00fan tus necesidades."
+          "linkType": "Asset"
         }
       ]
     }
   ],
-  "tags": [],
+  "tags": [
+  ],
   "editorInterfaces": [
     {
       "sys": {
@@ -2964,7 +3006,7 @@
             "linkType": "Space"
           }
         },
-        "version": 14,
+        "version": 16,
         "createdAt": "2025-01-08T17:26:57.258Z",
         "createdBy": {
           "sys": {
@@ -2973,7 +3015,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2025-01-17T00:25:29.963Z",
+        "updatedAt": "2025-01-21T04:21:58.479Z",
         "updatedBy": {
           "sys": {
             "id": "2jMmlSadkcJaP9vOQIjHfm",
@@ -3000,7 +3042,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo principal de la p\u00e1gina"
+            "helpText": "Título principal de la página"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3008,7 +3050,7 @@
         {
           "fieldId": "slug",
           "settings": {
-            "helpText": "URL amigable para la p\u00e1gina, debe coincidir con el slug del menuItem"
+            "helpText": "URL amigable para la página, debe coincidir con el slug del menuItem"
           },
           "widgetId": "slugEditor",
           "widgetNamespace": "builtin"
@@ -3016,7 +3058,7 @@
         {
           "fieldId": "featuredImage",
           "settings": {
-            "helpText": "Imagen destacada que aparecer\u00e1 en la parte superior de la p\u00e1gina",
+            "helpText": "Imagen destacada que aparecerá en la parte superior de la página",
             "showLinkEntityAction": true,
             "showCreateEntityAction": true
           },
@@ -3026,7 +3068,7 @@
         {
           "fieldId": "content",
           "settings": {
-            "helpText": "Contenido principal de la p\u00e1gina con formato enriquecido"
+            "helpText": "Contenido principal de la página con formato enriquecido"
           },
           "widgetId": "richTextEditor",
           "widgetNamespace": "builtin"
@@ -3034,7 +3076,7 @@
         {
           "fieldId": "isVisible",
           "settings": {
-            "helpText": "Controla si la p\u00e1gina es accesible",
+            "helpText": "Controla si la página es accesible",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
@@ -3044,7 +3086,7 @@
         {
           "fieldId": "label",
           "settings": {
-            "helpText": "Texto que se mostrar\u00e1 en el men\u00fa"
+            "helpText": "Texto que se mostrará en el menú"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3052,7 +3094,7 @@
         {
           "fieldId": "location",
           "settings": {
-            "helpText": "Ubicaci\u00f3n del enlace: 'header' para men\u00fa principal, 'footer' para pie de p\u00e1gina, 'blog' para blogs, 'null' para no mostrar"
+            "helpText": "Ubicación del enlace: 'header' para menú principal, 'footer' para pie de página, 'blog' para blogs, 'null' para no mostrar"
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -3070,7 +3112,7 @@
           "settings": {
             "ampm": "24",
             "format": "dateonly",
-            "helpText": "Fecha de publicaci\u00f3n del Articullo"
+            "helpText": "Fecha de publicación del Articullo"
           },
           "widgetId": "datePicker",
           "widgetNamespace": "builtin"
@@ -3078,7 +3120,7 @@
         {
           "fieldId": "tags",
           "settings": {
-            "helpText": "Categor\u00edas o etiquetas para clasificar el blog"
+            "helpText": "Categorías o etiquetas para clasificar el blog"
           },
           "widgetId": "tagEditor",
           "widgetNamespace": "builtin"
@@ -3158,103 +3200,6 @@
             "linkType": "Space"
           }
         },
-        "version": 2,
-        "createdAt": "2025-01-08T21:22:13.816Z",
-        "createdBy": {
-          "sys": {
-            "id": "2jMmlSadkcJaP9vOQIjHfm",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "updatedAt": "2025-01-08T21:22:14.626Z",
-        "updatedBy": {
-          "sys": {
-            "id": "2jMmlSadkcJaP9vOQIjHfm",
-            "type": "Link",
-            "linkType": "User"
-          }
-        },
-        "contentType": {
-          "sys": {
-            "id": "legalPage",
-            "type": "Link",
-            "linkType": "ContentType"
-          }
-        },
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        }
-      },
-      "controls": [
-        {
-          "fieldId": "title",
-          "settings": {
-            "helpText": "T\u00edtulo de la p\u00e1gina legal"
-          },
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "content",
-          "settings": {
-            "helpText": "Contenido legal"
-          },
-          "widgetId": "richTextEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "isVisible",
-          "settings": {
-            "helpText": "Controla la visibilidad de la p\u00e1gina",
-            "trueLabel": "Yes",
-            "falseLabel": "No"
-          },
-          "widgetId": "boolean",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "label",
-          "settings": {
-            "helpText": "Texto que se mostrar\u00e1 en el footer en la seccion legal"
-          },
-          "widgetId": "singleLine",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "slug",
-          "settings": {
-            "helpText": "URL amigable para la p\u00e1gina",
-            "trackingFieldId": "label"
-          },
-          "widgetId": "slugEditor",
-          "widgetNamespace": "builtin"
-        },
-        {
-          "fieldId": "location",
-          "settings": {
-            "helpText": "Siempre 'legal' para estas p\u00e1ginas"
-          },
-          "widgetId": "dropdown",
-          "widgetNamespace": "builtin"
-        }
-      ]
-    },
-    {
-      "sys": {
-        "id": "default",
-        "type": "EditorInterface",
-        "space": {
-          "sys": {
-            "id": "6jlrlv1l95yr",
-            "type": "Link",
-            "linkType": "Space"
-          }
-        },
         "version": 8,
         "createdAt": "2025-01-08T21:33:28.777Z",
         "createdBy": {
@@ -3301,7 +3246,7 @@
         {
           "fieldId": "widthLogo",
           "settings": {
-            "helpText": "indica el tama\u00f1o del logo en valor desde 50 a 500 px (por defecto 100px)"
+            "helpText": "indica el tamaño del logo en valor desde 50 a 500 px (por defecto 100px)"
           },
           "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
@@ -3309,7 +3254,7 @@
         {
           "fieldId": "ctaText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "Texto del botón de llamada a la acción"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3317,7 +3262,7 @@
         {
           "fieldId": "ctaUrl",
           "settings": {
-            "helpText": "URL externa para el bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "URL externa para el botón de llamada a la acción"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -3335,7 +3280,7 @@
             "linkType": "Space"
           }
         },
-        "version": 8,
+        "version": 16,
         "createdAt": "2025-01-08T21:47:13.265Z",
         "createdBy": {
           "sys": {
@@ -3344,7 +3289,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2025-01-13T16:56:00.635Z",
+        "updatedAt": "2025-01-21T21:44:24.498Z",
         "updatedBy": {
           "sys": {
             "id": "2jMmlSadkcJaP9vOQIjHfm",
@@ -3371,7 +3316,7 @@
         {
           "fieldId": "logo",
           "settings": {
-            "helpText": "Logo que se mostrara en el pie de p\u00e1gina",
+            "helpText": "Logo que se mostrara en el pie de página",
             "showLinkEntityAction": true,
             "showCreateEntityAction": true
           },
@@ -3381,7 +3326,7 @@
         {
           "fieldId": "widthLogo",
           "settings": {
-            "helpText": "indica el tama\u00f1o del logo en valor desde 50 a 500 px (por defecto 100px)"
+            "helpText": "indica el tamaño del logo en valor desde 50 a 500 px (por defecto 100px)"
           },
           "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
@@ -3408,16 +3353,16 @@
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "copyright",
-          "settings": {
-            "helpText": "Texto de derechos de autor"
-          },
-          "widgetId": "singleLine",
+          "fieldId": "isVisible",
+          "widgetId": "boolean",
           "widgetNamespace": "builtin"
         },
         {
-          "fieldId": "isVisible",
-          "widgetId": "boolean",
+          "fieldId": "copyright",
+          "settings": {
+            "helpText": "Actualiza tu plan para modificar este valor "
+          },
+          "widgetId": "singleLine",
           "widgetNamespace": "builtin"
         }
       ]
@@ -3469,7 +3414,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo principal del hero"
+            "helpText": "Título principal del hero"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3477,7 +3422,7 @@
         {
           "fieldId": "highlightedText",
           "settings": {
-            "helpText": "Texto resaltado dentro del t\u00edtulo"
+            "helpText": "Texto resaltado dentro del título"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3485,7 +3430,7 @@
         {
           "fieldId": "description",
           "settings": {
-            "helpText": "Descripci\u00f3n o subt\u00edtulo del hero"
+            "helpText": "Descripción o subtítulo del hero"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3493,7 +3438,7 @@
         {
           "fieldId": "ctaText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "Texto del botón de llamada a la acción"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3501,7 +3446,7 @@
         {
           "fieldId": "ctaUrl",
           "settings": {
-            "helpText": "URL externa para el bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "URL externa para el botón de llamada a la acción"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -3524,7 +3469,7 @@
         {
           "fieldId": "imagePosition",
           "settings": {
-            "helpText": "Indica la posici\u00f3n de la imagen respecto al Hero Section (opcional)"
+            "helpText": "Indica la posición de la imagen respecto al Hero Section (opcional)"
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -3532,7 +3477,7 @@
         {
           "fieldId": "imageWidth",
           "settings": {
-            "helpText": "Ingrese el tama\u00f1o deseado de la imagen (Opcional)"
+            "helpText": "Ingrese el tamaño deseado de la imagen (Opcional)"
           },
           "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
@@ -3586,7 +3531,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo de la secci\u00f3n"
+            "helpText": "Título de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3594,7 +3539,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": " Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": " Subtítulo o descripción de la sección"
           },
           "widgetId": "markdown",
           "widgetNamespace": "builtin"
@@ -3602,7 +3547,7 @@
         {
           "fieldId": "ctaText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "Texto del botón de llamada a la acción"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3610,7 +3555,7 @@
         {
           "fieldId": "ctaUrl",
           "settings": {
-            "helpText": "URL externa para el bot\u00f3n"
+            "helpText": "URL externa para el botón"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -3669,7 +3614,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo del paso"
+            "helpText": "Título del paso"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3677,7 +3622,7 @@
         {
           "fieldId": "description",
           "settings": {
-            "helpText": "Descripci\u00f3n detallada del paso"
+            "helpText": "Descripción detallada del paso"
           },
           "widgetId": "markdown",
           "widgetNamespace": "builtin"
@@ -3685,7 +3630,7 @@
         {
           "fieldId": "icon",
           "settings": {
-            "helpText": "Selecciona el nombre del \u00edcono para el paso del proceso"
+            "helpText": "Selecciona el nombre del ícono para el paso del proceso"
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -3693,7 +3638,7 @@
         {
           "fieldId": "ctaText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "Texto del botón de llamada a la acción"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3701,7 +3646,7 @@
         {
           "fieldId": "ctaUrl",
           "settings": {
-            "helpText": "URL externa para el bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "URL externa para el botón de llamada a la acción"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -3755,7 +3700,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo de la secci\u00f3n de Procesos"
+            "helpText": "Título de la sección de Procesos"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3763,7 +3708,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": "Subtítulo o descripción de la sección"
           },
           "widgetId": "markdown",
           "widgetNamespace": "builtin"
@@ -3857,7 +3802,7 @@
         {
           "fieldId": "features",
           "settings": {
-            "helpText": "Caracter\u00edsticas del plan"
+            "helpText": "Características del plan"
           },
           "widgetId": "tagEditor",
           "widgetNamespace": "builtin"
@@ -3865,7 +3810,7 @@
         {
           "fieldId": "payLinkText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n de pagos"
+            "helpText": "Texto del botón de pagos"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3873,7 +3818,7 @@
         {
           "fieldId": "payLink",
           "settings": {
-            "helpText": "URL externa para el bot\u00f3n de pagos"
+            "helpText": "URL externa para el botón de pagos"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -3945,7 +3890,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo de la secci\u00f3n"
+            "helpText": "Título de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3953,7 +3898,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": "Subtítulo o descripción de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -3987,7 +3932,7 @@
             "linkType": "Space"
           }
         },
-        "version": 22,
+        "version": 38,
         "createdAt": "2025-01-09T05:46:10.315Z",
         "createdBy": {
           "sys": {
@@ -3996,7 +3941,7 @@
             "linkType": "User"
           }
         },
-        "updatedAt": "2025-01-18T14:51:29.542Z",
+        "updatedAt": "2025-01-21T21:34:41.483Z",
         "updatedBy": {
           "sys": {
             "id": "2jMmlSadkcJaP9vOQIjHfm",
@@ -4023,7 +3968,7 @@
         {
           "fieldId": "internalName",
           "settings": {
-            "helpText": "Nombre interno para identificar la p\u00e1gina"
+            "helpText": "Nombre interno para identificar la página"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4031,7 +3976,7 @@
         {
           "fieldId": "slug",
           "settings": {
-            "helpText": "URL de la p\u00e1gina de inicio "
+            "helpText": "URL de la página de inicio "
           },
           "widgetId": "slugEditor",
           "widgetNamespace": "builtin"
@@ -4039,7 +3984,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo de la p\u00e1gina para SEO"
+            "helpText": "Título de la página para SEO"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4047,7 +3992,7 @@
         {
           "fieldId": "description",
           "settings": {
-            "helpText": "Descripci\u00f3n de la p\u00e1gina para SEO"
+            "helpText": "Descripción de la página para SEO"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4071,9 +4016,27 @@
           "widgetNamespace": "builtin"
         },
         {
+          "fieldId": "theme",
+          "settings": {
+            "helpText": "Elige el tema que desees "
+          },
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "customTheme",
+          "settings": {
+            "helpText": "Tema personalizado. Si se selecciona, anulará el tema predefinido",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "entryLinkEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
           "fieldId": "sections",
           "settings": {
-            "helpText": "Secciones de la p\u00e1gina y su orden",
+            "helpText": "Secciones de la página y su orden",
             "bulkEditing": false,
             "showLinkEntityAction": true,
             "showCreateEntityAction": true
@@ -4084,7 +4047,7 @@
         {
           "fieldId": "isVisible",
           "settings": {
-            "helpText": "Controla la visibilidad de la p\u00e1gina",
+            "helpText": "Controla la visibilidad de la página",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
@@ -4140,7 +4103,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo de la secci\u00f3n"
+            "helpText": "Título de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4148,7 +4111,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": "Subtítulo o descripción de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4288,7 +4251,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo de la secci\u00f3n"
+            "helpText": "Título de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4296,7 +4259,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": "Subtítulo o descripción de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4314,7 +4277,7 @@
         {
           "fieldId": "displayMode",
           "settings": {
-            "helpText": "Selecciona un Modo de visualizaci\u00f3n de los logos"
+            "helpText": "Selecciona un Modo de visualización de los logos"
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -4330,7 +4293,7 @@
         {
           "fieldId": "height",
           "settings": {
-            "helpText": "Alto en p\u00edxeles para todos los logos (Default: 60)"
+            "helpText": "Alto en píxeles para todos los logos (Default: 60)"
           },
           "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
@@ -4338,7 +4301,7 @@
         {
           "fieldId": "isVisible",
           "settings": {
-            "helpText": "Controla la visibilidad de la secci\u00f3n",
+            "helpText": "Controla la visibilidad de la sección",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
@@ -4402,7 +4365,7 @@
         {
           "fieldId": "description",
           "settings": {
-            "helpText": "Descripci\u00f3n detallada del caso de uso "
+            "helpText": "Descripción detallada del caso de uso "
           },
           "widgetId": "richTextEditor",
           "widgetNamespace": "builtin"
@@ -4410,7 +4373,7 @@
         {
           "fieldId": "icon",
           "settings": {
-            "helpText": "\u00cdcono peque\u00f1o para el caso de uso (opcional)",
+            "helpText": "Ícono pequeño para el caso de uso (opcional)",
             "showLinkEntityAction": true,
             "showCreateEntityAction": true
           },
@@ -4438,7 +4401,7 @@
         {
           "fieldId": "imagePosition",
           "settings": {
-            "helpText": "selecciona la posici\u00f3n de la imagen "
+            "helpText": "selecciona la posición de la imagen "
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -4446,7 +4409,7 @@
         {
           "fieldId": "imageWidth",
           "settings": {
-            "helpText": "Establece el tama\u00f1o de la Imagen del Caso de Uso"
+            "helpText": "Establece el tamaño de la Imagen del Caso de Uso"
           },
           "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
@@ -4454,7 +4417,7 @@
         {
           "fieldId": "isActive",
           "settings": {
-            "helpText": "Controla si el caso de uso est\u00e1 activo",
+            "helpText": "Controla si el caso de uso está activo",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
@@ -4464,7 +4427,7 @@
         {
           "fieldId": "seoTitle",
           "settings": {
-            "helpText": "T\u00edtulo optimizado para SEO (opcional)"
+            "helpText": "Título optimizado para SEO (opcional)"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4472,7 +4435,7 @@
         {
           "fieldId": "seoDescription",
           "settings": {
-            "helpText": "Descripci\u00f3n optimizada para SEO (opcional)"
+            "helpText": "Descripción optimizada para SEO (opcional)"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4526,7 +4489,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo principal de la secci\u00f3n"
+            "helpText": "Título principal de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4534,7 +4497,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": "Subtítulo o descripción de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4553,7 +4516,7 @@
         {
           "fieldId": "isVisible",
           "settings": {
-            "helpText": "Controla la visibilidad de la secci\u00f3n",
+            "helpText": "Controla la visibilidad de la sección",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
@@ -4609,7 +4572,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo principal de la secci\u00f3n"
+            "helpText": "Título principal de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4617,7 +4580,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o descripci\u00f3n de la secci\u00f3n"
+            "helpText": "Subtítulo o descripción de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4649,7 +4612,7 @@
         {
           "fieldId": "aspectRatio",
           "settings": {
-            "helpText": "Proporci\u00f3n del video (incluye vertical 9:16)"
+            "helpText": "Proporción del video (incluye vertical 9:16)"
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -4657,7 +4620,7 @@
         {
           "fieldId": "videoPosition",
           "settings": {
-            "helpText": "Posici\u00f3n del video en relaci\u00f3n al texto"
+            "helpText": "Posición del video en relación al texto"
           },
           "widgetId": "dropdown",
           "widgetNamespace": "builtin"
@@ -4665,7 +4628,7 @@
         {
           "fieldId": "videoHeight",
           "settings": {
-            "helpText": "Establece el tama\u00f1o del video (default: 360)"
+            "helpText": "Establece el tamaño del video (default: 360)"
           },
           "widgetId": "numberEditor",
           "widgetNamespace": "builtin"
@@ -4673,7 +4636,7 @@
         {
           "fieldId": "ctaText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "Texto del botón de llamada a la acción"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4681,7 +4644,7 @@
         {
           "fieldId": "ctaUrl",
           "settings": {
-            "helpText": "URL para el bot\u00f3n de llamada a la acci\u00f3n"
+            "helpText": "URL para el botón de llamada a la acción"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -4689,7 +4652,7 @@
         {
           "fieldId": "isVisible",
           "settings": {
-            "helpText": "Controla la visibilidad de la secci\u00f3n",
+            "helpText": "Controla la visibilidad de la sección",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
@@ -4745,7 +4708,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo corto y atractivo que describe el beneficio principal. M\u00e1ximo 60 caracteres"
+            "helpText": "Título corto y atractivo que describe el beneficio principal. Máximo 60 caracteres"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4753,7 +4716,7 @@
         {
           "fieldId": "description",
           "settings": {
-            "helpText": "Descripci\u00f3n detallada del beneficio. Mant\u00e9n un tono persuasivo y enfocado en el valor para el usuario"
+            "helpText": "Descripción detallada del beneficio. Mantén un tono persuasivo y enfocado en el valor para el usuario"
           },
           "widgetId": "markdown",
           "widgetNamespace": "builtin"
@@ -4761,7 +4724,7 @@
         {
           "fieldId": "icon",
           "settings": {
-            "helpText": "\u00cdcono representativo del beneficio. Se recomienda SVG o PNG con fondo transparente",
+            "helpText": "Ícono representativo del beneficio. Se recomienda SVG o PNG con fondo transparente",
             "showLinkEntityAction": true,
             "showCreateEntityAction": true
           },
@@ -4825,7 +4788,7 @@
         {
           "fieldId": "title",
           "settings": {
-            "helpText": "T\u00edtulo principal de la secci\u00f3n"
+            "helpText": "Título principal de la sección"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4833,7 +4796,7 @@
         {
           "fieldId": "subtitle",
           "settings": {
-            "helpText": "Subt\u00edtulo o frase motivadora que refuerza el t\u00edtulo"
+            "helpText": "Subtítulo o frase motivadora que refuerza el título"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4852,7 +4815,7 @@
         {
           "fieldId": "screenshot",
           "settings": {
-            "helpText": "Captura de pantalla o gr\u00e1fico del producto, Solo funciona con layout = split",
+            "helpText": "Captura de pantalla o gráfico del producto, Solo funciona con layout = split",
             "showLinkEntityAction": true,
             "showCreateEntityAction": true
           },
@@ -4870,7 +4833,7 @@
         {
           "fieldId": "ctaText",
           "settings": {
-            "helpText": "Texto del bot\u00f3n principal. Debe ser accionable y claro. M\u00e1ximo 20 caracteres"
+            "helpText": "Texto del botón principal. Debe ser accionable y claro. Máximo 20 caracteres"
           },
           "widgetId": "singleLine",
           "widgetNamespace": "builtin"
@@ -4878,7 +4841,7 @@
         {
           "fieldId": "ctaUrl",
           "settings": {
-            "helpText": "URL del bot\u00f3n principal. Aseg\u00farate de que sea la URL correcta y est\u00e9 activa"
+            "helpText": "URL del botón principal. Asegúrate de que sea la URL correcta y esté activa"
           },
           "widgetId": "urlEditor",
           "widgetNamespace": "builtin"
@@ -4886,7 +4849,7 @@
         {
           "fieldId": "layout",
           "settings": {
-            "helpText": "Estilo de layout para la secci\u00f3n"
+            "helpText": "Estilo de layout para la sección"
           },
           "widgetId": "radio",
           "widgetNamespace": "builtin"
@@ -4894,11 +4857,123 @@
         {
           "fieldId": "isVisible",
           "settings": {
-            "helpText": "Controla la visibilidad de la secci\u00f3n",
+            "helpText": "Controla la visibilidad de la sección",
             "trueLabel": "Yes",
             "falseLabel": "No"
           },
           "widgetId": "boolean",
+          "widgetNamespace": "builtin"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "space": {
+          "sys": {
+            "id": "6jlrlv1l95yr",
+            "type": "Link",
+            "linkType": "Space"
+          }
+        },
+        "version": 8,
+        "createdAt": "2025-01-21T19:40:13.590Z",
+        "createdBy": {
+          "sys": {
+            "id": "2jMmlSadkcJaP9vOQIjHfm",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "updatedAt": "2025-01-21T20:35:36.248Z",
+        "updatedBy": {
+          "sys": {
+            "id": "2jMmlSadkcJaP9vOQIjHfm",
+            "type": "Link",
+            "linkType": "User"
+          }
+        },
+        "contentType": {
+          "sys": {
+            "id": "customTheme",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        },
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "name",
+          "settings": {
+            "helpText": "Nombre identificativo del tema personalizado"
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "primaryColor",
+          "settings": {
+            "helpText": "Color principal para botones y elementos destacados (formato: #RRGGBB) Default: \"#7c3aed\""
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "accentColor",
+          "settings": {
+            "helpText": "\"Color secundario para gradientes (formato: #RRGGBB). Si no se especifica, se usará el color principal\""
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "backgroundColor",
+          "settings": {
+            "helpText": "Color de fondo del sitio (formato: #RRGGBB) - Default: \"#ffffff\""
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "textColor",
+          "settings": {
+            "helpText": "Color del texto principal (formato: #RRGGBB) - Default: \"#000000\""
+          },
+          "widgetId": "singleLine",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "style",
+          "settings": {
+            "helpText": "\"Estilo visual general del sitio\"  - minimal (Sin efectos visuales) - gradient (Con efectos de gradiente) - glass (Efecto cristal/transparencia)"
+          },
+          "widgetId": "dropdown",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "borderRadius",
+          "settings": {
+            "helpText": "Radio de borde en píxeles para elementos redondeados (0-20)"
+          },
+          "widgetId": "numberEditor",
+          "widgetNamespace": "builtin"
+        },
+        {
+          "fieldId": "preview",
+          "settings": {
+            "helpText": "Vista previa del tema personalizado",
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "assetLinkEditor",
           "widgetNamespace": "builtin"
         }
       ]
@@ -4907,8 +4982,10 @@
   "entries": [
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -4960,7 +5037,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -4981,8 +5059,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5034,7 +5114,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5067,8 +5148,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5081,7 +5164,7 @@
         "id": "16Pa13cn5IQArwwxPl6SOa",
         "type": "Entry",
         "createdAt": "2025-01-08T21:58:40.780Z",
-        "updatedAt": "2025-01-13T17:13:48.804Z",
+        "updatedAt": "2025-01-21T19:07:42.550Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -5089,8 +5172,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 25,
-        "publishedAt": "2025-01-13T17:13:48.804Z",
+        "publishedVersion": 27,
+        "publishedAt": "2025-01-21T19:07:42.550Z",
         "firstPublishedAt": "2025-01-08T22:01:49.322Z",
         "createdBy": {
           "sys": {
@@ -5106,8 +5189,8 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "publishedCounter": 7,
-        "version": 26,
+        "publishedCounter": 8,
+        "version": 28,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -5120,7 +5203,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5167,9 +5251,6 @@
         "phone": {
           "en-US": "3228854498"
         },
-        "copyright": {
-          "en-US": "derechos resevados"
-        },
         "isVisible": {
           "en-US": true
         }
@@ -5177,8 +5258,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5230,7 +5313,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5260,8 +5344,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5313,7 +5399,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5331,7 +5418,7 @@
           "en-US": "IA para impulsar tu negocio"
         },
         "description": {
-          "en-US": "Automatizamos tareas repetitivas, optimizamos tu flujo de trabajo y ayudamos a que tu negocio crezca sin l\u00edmites, gracias al poder de la Inteligencia Artificial."
+          "en-US": "Automatizamos tareas repetitivas, optimizamos tu flujo de trabajo y ayudamos a que tu negocio crezca sin límites, gracias al poder de la Inteligencia Artificial."
         },
         "ctaText": {
           "en-US": "Empecemos  ->"
@@ -5361,8 +5448,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5414,7 +5503,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5435,8 +5525,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5488,7 +5580,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5551,8 +5644,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5604,7 +5699,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5634,8 +5730,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5687,7 +5785,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5711,8 +5810,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5764,7 +5865,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5820,8 +5922,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5873,7 +5977,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -5913,8 +6018,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -5966,7 +6073,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6004,14 +6112,16 @@
           "en-US": false
         },
         "promotionalText": {
-          "en-US": "\u00a1El m\u00e1s vendido del 2024!"
+          "en-US": "¡El más vendido del 2024!"
         }
       }
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -6063,7 +6173,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6084,8 +6195,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -6137,7 +6250,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -6158,1047 +6272,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
-      },
-      "sys": {
-        "space": {
-          "sys": {
-            "type": "Link",
-            "linkType": "Space",
-            "id": "6jlrlv1l95yr"
-          }
-        },
-        "id": "6Ccn31PiZxYprojSWTPCBl",
-        "type": "Entry",
-        "createdAt": "2025-01-09T05:10:56.008Z",
-        "updatedAt": "2025-01-09T05:20:04.074Z",
-        "environment": {
-          "sys": {
-            "id": "master",
-            "type": "Link",
-            "linkType": "Environment"
-          }
-        },
-        "publishedVersion": 8,
-        "publishedAt": "2025-01-09T05:20:04.074Z",
-        "firstPublishedAt": "2025-01-09T05:11:54.295Z",
-        "createdBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "2jMmlSadkcJaP9vOQIjHfm"
-          }
-        },
-        "updatedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "2jMmlSadkcJaP9vOQIjHfm"
-          }
-        },
-        "publishedCounter": 2,
-        "version": 9,
-        "publishedBy": {
-          "sys": {
-            "type": "Link",
-            "linkType": "User",
-            "id": "2jMmlSadkcJaP9vOQIjHfm"
-          }
-        },
-        "fieldStatus": {
-          "*": {
-            "en-US": "published"
-          }
-        },
-        "automationTags": [],
-        "contentType": {
-          "sys": {
-            "type": "Link",
-            "linkType": "ContentType",
-            "id": "legalPage"
-          }
-        },
-        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/entries/6Ccn31PiZxYprojSWTPCBl"
-      },
-      "fields": {
-        "title": {
-          "en-US": "Pol\u00edtica de privacidad"
-        },
-        "content": {
-          "en-US": {
-            "nodeType": "document",
-            "data": {},
-            "content": [
-              {
-                "nodeType": "heading-1",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "En Scof AI, nos comprometemos a proteger y respetar la privacidad de nuestros usuarios. Esta Pol\u00edtica de Privacidad detalla c\u00f3mo recopilamos, usamos, almacenamos y protegemos tu informaci\u00f3n personal cuando visitas nuestro sitio web y utilizas nuestros servicios. Al usar nuestro sitio web, aceptas los t\u00e9rminos descritos en esta pol\u00edtica. Te recomendamos que leas esta pol\u00edtica cuidadosamente.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "1. Informaci\u00f3n que Recopilamos",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Podemos recopilar informaci\u00f3n personal de dos formas principales: la informaci\u00f3n que nos proporcionas directamente y la informaci\u00f3n recopilada de forma autom\u00e1tica.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "unordered-list",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Informaci\u00f3n proporcionada directamente:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Incluye datos que nos proporcionas cuando te registras, completas formularios de contacto, o te suscribes a nuestras actualizaciones, como nombre, correo electr\u00f3nico, n\u00famero de tel\u00e9fono y cualquier otra informaci\u00f3n que elijas proporcionar.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Informaci\u00f3n recopilada autom\u00e1ticamente:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Al visitar nuestro sitio, recopilamos informaci\u00f3n sobre tu uso del sitio, como tu direcci\u00f3n IP, tipo de navegador, tiempos de acceso, p\u00e1ginas vistas y datos de navegaci\u00f3n. Esto puede incluir el uso de cookies y tecnolog\u00edas de seguimiento similares.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "2. Uso de tu Informaci\u00f3n",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "La informaci\u00f3n que recopilamos tiene diversos prop\u00f3sitos, todos orientados a mejorar tu experiencia y nuestros servicios:",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "unordered-list",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Mejorar nuestro sitio web y servicios:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Utilizamos la informaci\u00f3n para entender c\u00f3mo interact\u00faas con nuestro sitio, optimizar su funcionalidad, y adaptar el contenido a tus preferencias.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Comunicaci\u00f3n contigo:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Si has dado tu consentimiento, podemos enviarte notificaciones, actualizaciones, y promociones relacionadas con nuestros servicios.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Respuestas a tus consultas:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Utilizamos tus datos para responder a tus solicitudes de soporte o consultas enviadas a trav\u00e9s de nuestros formularios de contacto.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Cumplimiento legal:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "En ciertos casos, podr\u00edamos utilizar tu informaci\u00f3n para cumplir con obligaciones legales y regulatorias aplicables.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "3. Compartici\u00f3n de tu Informaci\u00f3n",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Nos comprometemos a no compartir tu informaci\u00f3n personal con terceros, excepto en las siguientes circunstancias:",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "unordered-list",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Con tu consentimiento:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Cuando nos des tu autorizaci\u00f3n expresa para compartir tu informaci\u00f3n.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Proveedores de servicios:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Podemos compartir tu informaci\u00f3n con proveedores de servicios que act\u00faan en nuestro nombre para facilitar el funcionamiento del sitio, como proveedores de alojamiento, anal\u00edtica web o herramientas de comunicaci\u00f3n, siempre bajo estrictas medidas de confidencialidad.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Cumplimiento legal:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Podr\u00edamos divulgar tu informaci\u00f3n cuando sea necesario para cumplir con leyes o procesos legales, como responder a una orden judicial o a una solicitud gubernamental leg\u00edtima.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "4. Protecci\u00f3n de tu Informaci\u00f3n",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Implementamos medidas de seguridad t\u00e9cnicas y organizativas para proteger tu informaci\u00f3n personal contra el acceso no autorizado, la p\u00e9rdida, alteraci\u00f3n o divulgaci\u00f3n indebida. Sin embargo, debes tener en cuenta que ninguna transmisi\u00f3n de datos a trav\u00e9s de internet o sistema de almacenamiento electr\u00f3nico es completamente seguro, y no podemos garantizar la seguridad absoluta de la informaci\u00f3n transmitida.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "5. Tus Derechos en Relaci\u00f3n con tu Informaci\u00f3n",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Tienes ciertos derechos sobre tus datos personales, incluyendo:",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "unordered-list",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Derecho de acceso:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Puedes solicitarnos una copia de tus datos personales que estamos procesando.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Derecho de rectificaci\u00f3n:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Puedes pedirnos que corrijamos cualquier informaci\u00f3n inexacta o incompleta.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Derecho de eliminaci\u00f3n:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Puedes solicitar la eliminaci\u00f3n de tus datos personales en ciertas circunstancias.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Derecho de restricci\u00f3n:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Puedes solicitarnos que limitemos el procesamiento de tus datos en ciertos casos.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "list-item",
-                    "data": {},
-                    "content": [
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Derecho de oposici\u00f3n:",
-                            "marks": [
-                              {
-                                "type": "bold"
-                              }
-                            ],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": " ",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      },
-                      {
-                        "nodeType": "paragraph",
-                        "data": {},
-                        "content": [
-                          {
-                            "nodeType": "text",
-                            "value": "Puedes oponerte al procesamiento de tus datos personales en algunos casos, como en el caso de marketing directo.",
-                            "marks": [],
-                            "data": {}
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Para ejercer estos derechos, puedes ponerte en contacto con nosotros a trav\u00e9s del correo electr\u00f3nico ",
-                    "marks": [],
-                    "data": {}
-                  },
-                  {
-                    "nodeType": "hyperlink",
-                    "data": {
-                      "uri": "mailto:info@scof.ai"
-                    },
-                    "content": [
-                      {
-                        "nodeType": "text",
-                        "value": "info@scof.ai",
-                        "marks": [],
-                        "data": {}
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "text",
-                    "value": ". Te responderemos en un plazo razonable conforme a la normativa vigente.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "6. Retenci\u00f3n de Datos",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Conservaremos tu informaci\u00f3n personal solo durante el tiempo necesario para cumplir con los fines para los que se recopil\u00f3, incluyendo para cumplir con requisitos legales, contables o de informes. Cuando la informaci\u00f3n ya no sea necesaria, la eliminaremos de manera segura.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "7. Cambios a esta Pol\u00edtica de Privacidad",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Nos reservamos el derecho a modificar esta Pol\u00edtica de Privacidad en cualquier momento. Cualquier cambio significativo ser\u00e1 comunicado a trav\u00e9s de nuestro sitio web o por otros medios de comunicaci\u00f3n disponibles. Te recomendamos que revises esta pol\u00edtica de vez en cuando para estar informado sobre nuestras pr\u00e1cticas de privacidad.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "heading-2",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "8. Contacto",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "Si tienes alguna pregunta, comentario o preocupaci\u00f3n sobre nuestra Pol\u00edtica de Privacidad o sobre el tratamiento de tu informaci\u00f3n, no dudes en ponerte en contacto con nosotros a trav\u00e9s del correo electr\u00f3nico ",
-                    "marks": [],
-                    "data": {}
-                  },
-                  {
-                    "nodeType": "hyperlink",
-                    "data": {
-                      "uri": "mailto:info@scof.ai"
-                    },
-                    "content": [
-                      {
-                        "nodeType": "text",
-                        "value": "info@scof.ai",
-                        "marks": [],
-                        "data": {}
-                      }
-                    ]
-                  },
-                  {
-                    "nodeType": "text",
-                    "value": ". Nos comprometemos a proteger tu privacidad y a responder a cualquier inquietud en el menor tiempo posible.",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              },
-              {
-                "nodeType": "paragraph",
-                "data": {},
-                "content": [
-                  {
-                    "nodeType": "text",
-                    "value": "\n",
-                    "marks": [],
-                    "data": {}
-                  }
-                ]
-              }
-            ]
-          }
-        },
-        "isVisible": {
-          "en-US": true
-        },
-        "label": {
-          "en-US": "Pol\u00edtica de privacidad"
-        },
-        "slug": {
-          "en-US": "politica-de-privacidad"
-        },
-        "location": {
-          "en-US": "legal"
-        }
-      }
-    },
-    {
-      "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7211,7 +6288,7 @@
         "id": "6Go9dRoP21ZDimgmWxCDJR",
         "type": "Entry",
         "createdAt": "2025-01-09T05:46:35.708Z",
-        "updatedAt": "2025-01-18T14:55:47.396Z",
+        "updatedAt": "2025-01-21T21:33:35.872Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -7219,8 +6296,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 97,
-        "publishedAt": "2025-01-18T14:55:47.396Z",
+        "publishedVersion": 177,
+        "publishedAt": "2025-01-21T21:33:35.872Z",
         "firstPublishedAt": "2025-01-09T05:47:51.171Z",
         "createdBy": {
           "sys": {
@@ -7236,8 +6313,8 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "publishedCounter": 35,
-        "version": 98,
+        "publishedCounter": 75,
+        "version": 178,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -7250,7 +6327,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7271,7 +6349,7 @@
           "en-US": "Beautiful Landing Pages"
         },
         "description": {
-          "en-US": "Automatizamos tareas repetitivas, optimizamos tu flujo de trabajo y ayudamos a que tu negocio crezca sin l\u00edmites, gracias al poder de la Inteligencia Artificial."
+          "en-US": "Automatizamos tareas repetitivas, optimizamos tu flujo de trabajo y ayudamos a que tu negocio crezca sin límites, gracias al poder de la Inteligencia Artificial."
         },
         "valeiaChat": {
           "en-US": true
@@ -7364,8 +6442,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7417,7 +6497,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7445,14 +6526,18 @@
         },
         "content": {
           "en-US": {
-            "data": {},
+            "data": {
+            },
             "content": [
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": "What Is an About Us Page?",
                     "nodeType": "text"
                   }
@@ -7460,23 +6545,29 @@
                 "nodeType": "heading-2"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
-                    "value": "An About Us page exists to share a business\u2019 story and history and provide a deeper connection with customers.",
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "An About Us page exists to share a business’ story and history and provide a deeper connection with customers.",
                     "nodeType": "text"
                   }
                 ],
                 "nodeType": "paragraph"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": "Consumers want to know the team behind the brand they are supporting. An About Us page provides the perfect real estate to pull back the curtain and reveal who is working behind the scenes.",
                     "nodeType": "text"
                   }
@@ -7484,11 +6575,14 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": "Most importantly, though, an About Us page facilitates trust between the consumer and the business.",
                     "nodeType": "text"
                   }
@@ -7496,11 +6590,14 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": "More than ",
                     "nodeType": "text"
                   },
@@ -7510,8 +6607,10 @@
                     },
                     "content": [
                       {
-                        "data": {},
-                        "marks": [],
+                        "data": {
+                        },
+                        "marks": [
+                        ],
                         "value": "33%",
                         "nodeType": "text"
                       }
@@ -7519,20 +6618,25 @@
                     "nodeType": "hyperlink"
                   },
                   {
-                    "data": {},
-                    "marks": [],
-                    "value": " of consumers say that \u201ctrust\u201d is a core factor when deciding which businesses to support.",
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": " of consumers say that “trust” is a core factor when deciding which businesses to support.",
                     "nodeType": "text"
                   }
                 ],
                 "nodeType": "paragraph"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": "With an About Us page, you can begin to form an emotional relationship with customers and ",
                     "nodeType": "text"
                   },
@@ -7542,8 +6646,10 @@
                     },
                     "content": [
                       {
-                        "data": {},
-                        "marks": [],
+                        "data": {
+                        },
+                        "marks": [
+                        ],
                         "value": "engage with them",
                         "nodeType": "text"
                       }
@@ -7551,8 +6657,10 @@
                     "nodeType": "hyperlink"
                   },
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": " on a deeper level.",
                     "nodeType": "text"
                   }
@@ -7560,12 +6668,15 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
-                    "value": "So how can you create one that resonates? Let\u2019s look at some of the components you need to include in your About Us page",
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "So how can you create one that resonates? Let’s look at some of the components you need to include in your About Us page",
                     "nodeType": "text"
                   }
                 ],
@@ -7596,8 +6707,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7649,7 +6762,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7694,8 +6808,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7747,7 +6863,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7768,8 +6885,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7821,7 +6940,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7845,8 +6965,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7898,7 +7020,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -7928,8 +7051,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -7981,7 +7106,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8005,8 +7131,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8058,7 +7186,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8095,14 +7224,16 @@
           "en-US": true
         },
         "promotionalText": {
-          "en-US": "\u00a1El m\u00e1s vendido del 2024!"
+          "en-US": "¡El más vendido del 2024!"
         }
       }
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8154,7 +7285,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8190,8 +7322,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8243,7 +7377,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8294,8 +7429,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8347,7 +7484,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8389,8 +7527,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8442,7 +7582,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8459,11 +7600,13 @@
         "description": {
           "en-US": {
             "nodeType": "document",
-            "data": {},
+            "data": {
+            },
             "content": [
               {
                 "nodeType": "heading-1",
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
                     "nodeType": "text",
@@ -8473,33 +7616,41 @@
                         "type": "bold"
                       }
                     ],
-                    "data": {}
+                    "data": {
+                    }
                   },
                   {
                     "nodeType": "text",
                     "value": " del CAso 1  ",
-                    "marks": [],
-                    "data": {}
+                    "marks": [
+                    ],
+                    "data": {
+                    }
                   }
                 ]
               },
               {
                 "nodeType": "unordered-list",
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
                     "nodeType": "list-item",
-                    "data": {},
+                    "data": {
+                    },
                     "content": [
                       {
                         "nodeType": "paragraph",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "text",
                             "value": "primero",
-                            "marks": [],
-                            "data": {}
+                            "marks": [
+                            ],
+                            "data": {
+                            }
                           }
                         ]
                       }
@@ -8507,24 +7658,30 @@
                   },
                   {
                     "nodeType": "list-item",
-                    "data": {},
+                    "data": {
+                    },
                     "content": [
                       {
                         "nodeType": "paragraph",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "text",
                             "value": "segundo",
-                            "marks": [],
-                            "data": {}
+                            "marks": [
+                            ],
+                            "data": {
+                            }
                           }
                         ]
                       },
                       {
                         "nodeType": "hr",
-                        "data": {},
-                        "content": []
+                        "data": {
+                        },
+                        "content": [
+                        ]
                       }
                     ]
                   }
@@ -8532,30 +7689,38 @@
               },
               {
                 "nodeType": "hr",
-                "data": {},
-                "content": []
+                "data": {
+                },
+                "content": [
+                ]
               },
               {
                 "nodeType": "table",
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
                     "nodeType": "table-row",
-                    "data": {},
+                    "data": {
+                    },
                     "content": [
                       {
                         "nodeType": "table-header-cell",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "paragraph",
-                            "data": {},
+                            "data": {
+                            },
                             "content": [
                               {
                                 "nodeType": "text",
                                 "value": "11",
-                                "marks": [],
-                                "data": {}
+                                "marks": [
+                                ],
+                                "data": {
+                                }
                               }
                             ]
                           }
@@ -8563,17 +7728,21 @@
                       },
                       {
                         "nodeType": "table-header-cell",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "paragraph",
-                            "data": {},
+                            "data": {
+                            },
                             "content": [
                               {
                                 "nodeType": "text",
                                 "value": "22",
-                                "marks": [],
-                                "data": {}
+                                "marks": [
+                                ],
+                                "data": {
+                                }
                               }
                             ]
                           }
@@ -8583,21 +7752,26 @@
                   },
                   {
                     "nodeType": "table-row",
-                    "data": {},
+                    "data": {
+                    },
                     "content": [
                       {
                         "nodeType": "table-cell",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "paragraph",
-                            "data": {},
+                            "data": {
+                            },
                             "content": [
                               {
                                 "nodeType": "text",
                                 "value": "CSKCM",
-                                "marks": [],
-                                "data": {}
+                                "marks": [
+                                ],
+                                "data": {
+                                }
                               }
                             ]
                           }
@@ -8605,17 +7779,21 @@
                       },
                       {
                         "nodeType": "table-cell",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "paragraph",
-                            "data": {},
+                            "data": {
+                            },
                             "content": [
                               {
                                 "nodeType": "text",
                                 "value": "DASD",
-                                "marks": [],
-                                "data": {}
+                                "marks": [
+                                ],
+                                "data": {
+                                }
                               }
                             ]
                           }
@@ -8625,21 +7803,26 @@
                   },
                   {
                     "nodeType": "table-row",
-                    "data": {},
+                    "data": {
+                    },
                     "content": [
                       {
                         "nodeType": "table-cell",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "paragraph",
-                            "data": {},
+                            "data": {
+                            },
                             "content": [
                               {
                                 "nodeType": "text",
                                 "value": "asfa",
-                                "marks": [],
-                                "data": {}
+                                "marks": [
+                                ],
+                                "data": {
+                                }
                               }
                             ]
                           }
@@ -8647,17 +7830,21 @@
                       },
                       {
                         "nodeType": "table-cell",
-                        "data": {},
+                        "data": {
+                        },
                         "content": [
                           {
                             "nodeType": "paragraph",
-                            "data": {},
+                            "data": {
+                            },
                             "content": [
                               {
                                 "nodeType": "text",
                                 "value": "asda",
-                                "marks": [],
-                                "data": {}
+                                "marks": [
+                                ],
+                                "data": {
+                                }
                               }
                             ]
                           }
@@ -8669,13 +7856,16 @@
               },
               {
                 "nodeType": "paragraph",
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
                     "nodeType": "text",
                     "value": "",
-                    "marks": [],
-                    "data": {}
+                    "marks": [
+                    ],
+                    "data": {
+                    }
                   }
                 ]
               }
@@ -8692,8 +7882,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8745,7 +7937,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8761,13 +7954,16 @@
         },
         "description": {
           "en-US": {
-            "data": {},
+            "data": {
+            },
             "content": [
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
+                    "data": {
+                    },
                     "marks": [
                       {
                         "type": "bold"
@@ -8777,8 +7973,10 @@
                     "nodeType": "text"
                   },
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": " is simply dummy text of the printing ",
                     "nodeType": "text"
                   }
@@ -8786,11 +7984,14 @@
                 "nodeType": "paragraph"
               },
               {
-                "data": {},
+                "data": {
+                },
                 "content": [
                   {
-                    "data": {},
-                    "marks": [],
+                    "data": {
+                    },
+                    "marks": [
+                    ],
                     "value": "and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum ",
                     "nodeType": "text"
                   }
@@ -8835,8 +8036,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8849,7 +8052,7 @@
         "id": "27GzaI5VEY5KR7LeHwHmhp",
         "type": "Entry",
         "createdAt": "2025-01-15T20:32:18.244Z",
-        "updatedAt": "2025-01-16T20:19:32.178Z",
+        "updatedAt": "2025-01-21T21:24:48.566Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -8857,8 +8060,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 167,
-        "publishedAt": "2025-01-16T20:19:32.178Z",
+        "publishedVersion": 169,
+        "publishedAt": "2025-01-21T21:24:48.566Z",
         "firstPublishedAt": "2025-01-15T20:34:20.338Z",
         "createdBy": {
           "sys": {
@@ -8874,8 +8077,8 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "publishedCounter": 74,
-        "version": 168,
+        "publishedCounter": 75,
+        "version": 170,
         "publishedBy": {
           "sys": {
             "type": "Link",
@@ -8888,7 +8091,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -8912,7 +8116,7 @@
           "en-US": "\nis simply dummy text of the printing and \ntypesetting industry. Lorem Ipsum has been \nthe industry's standard dummy text ever since \nthe 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
         },
         "videoUrl": {
-          "en-US": "https://www.youtube.com/shorts/C0OzFtC6Qw4"
+          "en-US": "https://www.youtube.com/shorts/sO3y0B53waw"
         },
         "aspectRatio": {
           "en-US": "9:16"
@@ -8936,8 +8140,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -8989,7 +8195,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -9010,8 +8217,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9063,7 +8272,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -9126,8 +8336,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9179,7 +8391,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -9212,8 +8425,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9265,7 +8480,8 @@
             "en-US": "published"
           }
         },
-        "automationTags": [],
+        "automationTags": [
+        ],
         "contentType": {
           "sys": {
             "type": "Link",
@@ -9297,9 +8513,13 @@
       }
     },
     {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
       "sys": {
-        "id": "goleanLanding",
-        "type": "Entry",
         "space": {
           "sys": {
             "type": "Link",
@@ -9307,6 +8527,10 @@
             "id": "6jlrlv1l95yr"
           }
         },
+        "id": "4IdDHhqysxONuhW6yIzqIP",
+        "type": "Entry",
+        "createdAt": "2025-01-21T04:22:20.810Z",
+        "updatedAt": "2025-01-21T04:23:48.349Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -9314,6 +8538,9 @@
             "linkType": "Environment"
           }
         },
+        "publishedVersion": 11,
+        "publishedAt": "2025-01-21T04:23:48.349Z",
+        "firstPublishedAt": "2025-01-21T04:23:48.349Z",
         "createdBy": {
           "sys": {
             "type": "Link",
@@ -9328,59 +8555,323 @@
             "id": "2jMmlSadkcJaP9vOQIjHfm"
           }
         },
-        "createdAt": "2025-01-18T17:00:00.000Z",
-        "updatedAt": "2025-01-18T17:00:00.000Z",
-        "publishedAt": "2025-01-18T17:00:00.000Z",
-        "publishedVersion": 1,
         "publishedCounter": 1,
-        "version": 1
+        "version": 12,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dynamicPage"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/entries/4IdDHhqysxONuhW6yIzqIP"
       },
       "fields": {
-        "internalName": {
-          "en-US": "GoLean Landing Page"
+        "title": {
+          "en-US": "Politicas de Privacidad"
         },
         "slug": {
-          "en-US": "golean-landing"
+          "en-US": "politicas-de-privacidad"
         },
-        "title": {
-          "en-US": "GoLean: Plantillas de contenido personalizables"
-        },
-        "description": {
-          "en-US": "Crea y personaliza tus Landing Pages f\u00e1cilmente con GoLean."
-        },
-        "googleTagManager": {
-          "en-US": ""
-        },
-        "valeiaChat": {
-          "en-US": true
-        },
-        "sections": {
-          "en-US": [
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "heroSection"
-              }
+        "content": {
+          "en-US": {
+            "data": {
             },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "pricingSection"
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "value": "TITULO legal",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "En Scof AI, nos comprometemos a proteger y respetar la privacidad de nuestros usuarios. Esta Política de Privacidad detalla cómo recopilamos, usamos, almacenamos y protegemos tu información personal cuando visitas nuestro sitio web y utilizas nuestros servicios. Al usar nuestro sitio web, aceptas los términos descritos en esta política. Te recomendamos que leas esta política cuidadosamente.\n1. Información que Recopilamos\nPodemos recopilar información personal de dos formas principales: la información que nos proporcionas directamente y la información recopilada de forma automática.\nInformación proporcionada directamente:\n \n",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
               }
-            },
-            {
-              "sys": {
-                "type": "Link",
-                "linkType": "Entry",
-                "id": "faqSection"
-              }
-            }
-          ]
+            ],
+            "nodeType": "document"
+          }
         },
         "isVisible": {
           "en-US": true
+        },
+        "label": {
+          "en-US": "Politica de privacidad"
+        },
+        "location": {
+          "en-US": "legal"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6jlrlv1l95yr"
+          }
+        },
+        "id": "4xEgSmz045c9Gaywf2UFfV",
+        "type": "Entry",
+        "createdAt": "2025-01-21T04:25:09.940Z",
+        "updatedAt": "2025-01-21T04:25:44.545Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 6,
+        "publishedAt": "2025-01-21T04:25:44.545Z",
+        "firstPublishedAt": "2025-01-21T04:25:44.545Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 7,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "dynamicPage"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/entries/4xEgSmz045c9Gaywf2UFfV"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Nosotros"
+        },
+        "slug": {
+          "en-US": "nosotros"
+        },
+        "featuredImage": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3g3A8RbLZT0NFQ6Krava3k"
+            }
+          }
+        },
+        "content": {
+          "en-US": {
+            "data": {
+            },
+            "content": [
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "About ",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              },
+              {
+                "data": {
+                },
+                "content": [
+                  {
+                    "data": {
+                    },
+                    "marks": [
+                    ],
+                    "value": "npsotros",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          }
+        },
+        "isVisible": {
+          "en-US": true
+        },
+        "label": {
+          "en-US": "About"
+        },
+        "location": {
+          "en-US": "header"
+        }
+      }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6jlrlv1l95yr"
+          }
+        },
+        "id": "pjjh4242MLPFkyjmJDGsE",
+        "type": "Entry",
+        "createdAt": "2025-01-21T20:38:16.151Z",
+        "updatedAt": "2025-01-21T21:22:29.613Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 50,
+        "publishedAt": "2025-01-21T21:22:29.613Z",
+        "firstPublishedAt": "2025-01-21T20:39:38.786Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "publishedCounter": 19,
+        "version": 51,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "automationTags": [
+        ],
+        "contentType": {
+          "sys": {
+            "type": "Link",
+            "linkType": "ContentType",
+            "id": "customTheme"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/entries/pjjh4242MLPFkyjmJDGsE"
+      },
+      "fields": {
+        "name": {
+          "en-US": "RED"
+        },
+        "primaryColor": {
+          "en-US": "#8751ed"
+        },
+        "accentColor": {
+          "en-US": "#0004ff"
+        },
+        "backgroundColor": {
+          "en-US": "#f3a6a6"
+        },
+        "textColor": {
+          "en-US": "#000000"
+        },
+        "style": {
+          "en-US": "gradient"
+        },
+        "borderRadius": {
+          "en-US": 5
+        },
+        "preview": {
+          "en-US": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Asset",
+              "id": "3XkatzL1v5gEwUvgwYtj3N"
+            }
+          }
         }
       }
     }
@@ -9388,8 +8879,10 @@
   "assets": [
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9468,8 +8961,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9548,8 +9043,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9628,8 +9125,10 @@
     },
     {
       "metadata": {
-        "tags": [],
-        "concepts": []
+        "tags": [
+        ],
+        "concepts": [
+        ]
       },
       "sys": {
         "space": {
@@ -9705,6 +9204,88 @@
           }
         }
       }
+    },
+    {
+      "metadata": {
+        "tags": [
+        ],
+        "concepts": [
+        ]
+      },
+      "sys": {
+        "space": {
+          "sys": {
+            "type": "Link",
+            "linkType": "Space",
+            "id": "6jlrlv1l95yr"
+          }
+        },
+        "id": "3XkatzL1v5gEwUvgwYtj3N",
+        "type": "Asset",
+        "createdAt": "2025-01-21T21:21:53.733Z",
+        "updatedAt": "2025-01-21T21:22:20.053Z",
+        "environment": {
+          "sys": {
+            "id": "master",
+            "type": "Link",
+            "linkType": "Environment"
+          }
+        },
+        "publishedVersion": 5,
+        "publishedAt": "2025-01-21T21:22:20.053Z",
+        "firstPublishedAt": "2025-01-21T21:22:20.053Z",
+        "createdBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "updatedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "publishedCounter": 1,
+        "version": 6,
+        "publishedBy": {
+          "sys": {
+            "type": "Link",
+            "linkType": "User",
+            "id": "2jMmlSadkcJaP9vOQIjHfm"
+          }
+        },
+        "fieldStatus": {
+          "*": {
+            "en-US": "published"
+          }
+        },
+        "urn": "crn:contentful:::content:spaces/6jlrlv1l95yr/environments/master/assets/3XkatzL1v5gEwUvgwYtj3N"
+      },
+      "fields": {
+        "title": {
+          "en-US": "Tema red"
+        },
+        "description": {
+          "en-US": "tema red prueba"
+        },
+        "file": {
+          "en-US": {
+            "url": "//images.ctfassets.net/6jlrlv1l95yr/3XkatzL1v5gEwUvgwYtj3N/8a82ab47e9218f9c0c3cebdf604ab072/image.png",
+            "details": {
+              "size": 557970,
+              "image": {
+                "width": 1638,
+                "height": 886
+              }
+            },
+            "fileName": "image.png",
+            "contentType": "image/png"
+          }
+        }
+      }
     }
   ],
   "locales": [
@@ -9754,7 +9335,8 @@
       }
     }
   ],
-  "webhooks": [],
+  "webhooks": [
+  ],
   "roles": [
     {
       "name": "Editor",
@@ -9797,11 +9379,16 @@
         "ContentModel": [
           "read"
         ],
-        "Settings": [],
-        "ContentDelivery": [],
-        "Environments": [],
-        "EnvironmentAliases": [],
-        "Tags": []
+        "Settings": [
+        ],
+        "ContentDelivery": [
+        ],
+        "Environments": [
+        ],
+        "EnvironmentAliases": [
+        ],
+        "Tags": [
+        ]
       },
       "sys": {
         "type": "Role",
