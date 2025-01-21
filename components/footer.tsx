@@ -143,9 +143,9 @@ export function Footer({ content, navigationPages }: FooterProps) {
 
         <div className="border-t border-border pt-8">
           <p className="text-center text-foreground/60">
-            {/*copyright*/}2025 desarrollado con Go lean por Whitelabel,
-            derechos reservados © Diseñado con pasión para impulsar tu
-            crecimiento.
+            {/*copyright*/}
+            2025 desarrollado con Go lean por Whitelabel, derechos reservados ©
+            Diseñado con pasión para impulsar tu crecimiento.
           </p>
         </div>
       </div>
