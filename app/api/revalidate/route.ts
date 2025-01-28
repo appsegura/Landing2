@@ -1,21 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath } from "next/cache";
-import crypto from "crypto";
-
-// Helper function to verify Contentful webhook signature
-function verifyContentfulWebhook(
-  rawBody: string,
-  signature: string,
-  secret: string
-): boolean {
-  const hmac = crypto.createHmac("sha256", secret);
-  hmac.update(rawBody);
-  const calculatedSignature = hmac.digest("hex");
-  return crypto.timingSafeEqual(
-    Buffer.from(signature),
-    Buffer.from(calculatedSignature)
-  );
-}
 
 // Helper function to get the path to revalidate based on Contentful entry
 function getPathToRevalidate(
@@ -60,16 +44,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Verify signature
-    if (!signature) {
-      console.error("❌ Missing signature");
-      return NextResponse.json(
-        { message: "Missing signature" },
-        { status: 401 }
-      );
-    }
-
-    if (!verifyContentfulWebhook(rawBody, signature, webhookSecret)) {
+    // Verify signature matches the static token
+    if (signature !== webhookSecret) {
       console.error("❌ Invalid signature");
       return NextResponse.json(
         { message: "Invalid signature" },
