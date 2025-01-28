@@ -10,6 +10,8 @@ import { Footer } from "@/components/footer";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
+export const revalidate = 86400;
+
 // Esta función es requerida para generar las rutas estáticas
 export async function generateStaticParams() {
   const [navigationPages, legalPages] = await Promise.all([

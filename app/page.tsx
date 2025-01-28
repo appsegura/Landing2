@@ -12,6 +12,8 @@ import { Faq } from "@/components/faq";
 import { getNavigationPages, getLandingPage } from "@/lib/contentful";
 import { Metadata } from "next";
 
+export const revalidate = 86400;
+
 export async function generateMetadata(): Promise<Metadata> {
   const landingPage = await getLandingPage();
 

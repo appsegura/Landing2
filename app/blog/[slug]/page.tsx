@@ -12,6 +12,8 @@ import { Footer } from "@/components/footer";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 
+export const revalidate = 86400;
+
 export async function generateStaticParams() {
   const { blogs } = await getBlogs();
   return blogs.map((blog) => ({
