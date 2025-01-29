@@ -172,19 +172,22 @@ export interface Benefit {
   title: string;
   description: string;
   icon?: ContentfulAsset;
+  image?: ContentfulAsset;
+  imagePosition?: "right" | "left";
+  imageWidth?: number;
   accentColor?: string;
+  ctaText?: string;
+  ctaUrl?: string;
+  secondaryCtaText?: string;
+  secondaryCtaUrl?: string;
 }
 
 export interface BenefitsSection {
   title: string;
   subtitle?: string;
   benefits: ContentfulEntry<Benefit>[];
-  screenshot?: ContentfulAsset;
-  screenshotDescription?: string;
-  ctaText?: string;
-  ctaUrl?: string;
-  layout?: "grid" | "split";
   isVisible: boolean;
+  backgroundColor: string;
 }
 
 export interface ProductDemoSection {

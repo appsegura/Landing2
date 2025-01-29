@@ -13,7 +13,7 @@ export function Partners({ content }: PartnersProps) {
     subtitle,
     logos,
     isVisible,
-    displayMode,
+    displayMode = "grid",
     scrollSpeed = 30,
     height = 60,
   } = content;
