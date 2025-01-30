@@ -170,12 +170,11 @@ export interface PricingSection {
 
 export interface Benefit {
   title: string;
+  tabLabel: string;
   description: string;
-  icon?: ContentfulAsset;
+  features?: string[];
   image?: ContentfulAsset;
   imagePosition?: "right" | "left";
-  imageWidth?: number;
-  accentColor?: string;
   ctaText?: string;
   ctaUrl?: string;
   secondaryCtaText?: string;
@@ -187,7 +186,8 @@ export interface BenefitsSection {
   subtitle?: string;
   benefits: ContentfulEntry<Benefit>[];
   isVisible: boolean;
-  backgroundColor: string;
+  backgroundColor?: string;
+  accentColor?: string;
 }
 
 export interface ProductDemoSection {

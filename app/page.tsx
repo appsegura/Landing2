@@ -34,7 +34,7 @@ export default async function Home() {
   }
 
   // Función para renderizar una sección basada en su tipo de contenido
-  const renderSection = (section: any) => {
+  const renderSection = (section: any, index: number) => {
     // Verificamos que section y sys existan
     if (!section || !section.sys || !section.sys.contentType) {
       return null;
@@ -43,34 +43,44 @@ export default async function Home() {
     const contentTypeId = section.sys.contentType.sys.id;
     const sectionContent = section.fields;
 
+    // Generamos una key única para cada sección usando el índice y el ID
+    const sectionKey = `${contentTypeId}-${section.sys.id}-${index}`;
+
     // Renderizamos la sección correspondiente basada en el tipo de contenido
     switch (contentTypeId) {
       case "headerSection":
         return (
-          <Header content={sectionContent} navigationPages={navigationPages} />
+          <Header
+            key={sectionKey}
+            content={sectionContent}
+            navigationPages={navigationPages}
+          />
         );
       case "heroSection":
-        return <Hero content={sectionContent} />;
+        return <Hero key={sectionKey} content={sectionContent} />;
       case "partnersSection":
-        return <Partners content={sectionContent} />;
+        return <Partners key={sectionKey} content={sectionContent} />;
       case "processSection":
-        return <Process content={sectionContent} />;
+        return <Process key={sectionKey} content={sectionContent} />;
       case "pricingSection":
-        return <Pricing content={sectionContent} />;
-
+        return <Pricing key={sectionKey} content={sectionContent} />;
       case "faqSection":
-        return <Faq content={sectionContent} />;
+        return <Faq key={sectionKey} content={sectionContent} />;
       case "useCasesSection":
-        return <UseCases content={sectionContent} />;
+        return <UseCases key={sectionKey} content={sectionContent} />;
       case "productDemoSection":
-        return <ProductDemo content={sectionContent} />;
+        return <ProductDemo key={sectionKey} content={sectionContent} />;
       case "benefitsSection":
-        return <Benefits content={sectionContent} />;
+        return <Benefits key={sectionKey} content={sectionContent} />;
       case "ctaSection":
-        return <Cta content={sectionContent} />;
+        return <Cta key={sectionKey} content={sectionContent} />;
       case "footerSection":
         return (
-          <Footer content={sectionContent} navigationPages={navigationPages} />
+          <Footer
+            key={sectionKey}
+            content={sectionContent}
+            navigationPages={navigationPages}
+          />
         );
       default:
         return null;
@@ -79,9 +89,9 @@ export default async function Home() {
 
   return (
     <>
-      {landingPage.sections?.map((section, index) => (
-        <div key={section.sys.id}>{renderSection(section)}</div>
-      ))}
+      {landingPage.sections?.map((section, index) =>
+        renderSection(section, index)
+      )}
     </>
   );
 }

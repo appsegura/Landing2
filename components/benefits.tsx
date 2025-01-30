@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { BenefitsSection } from "@/types/contentful";
 import { Button } from "./ui/button";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -12,7 +13,8 @@ interface BenefitsProps {
 }
 
 export function Benefits({ content }: BenefitsProps) {
-  const { title, subtitle, benefits, isVisible, backgroundColor } = content;
+  const { title, subtitle, benefits, isVisible, backgroundColor, accentColor } =
+    content;
 
   const [activeBenefit, setActiveBenefit] = useState(0);
 
@@ -30,10 +32,9 @@ export function Benefits({ content }: BenefitsProps) {
       return `rgba(${r}, ${g}, ${b}, ${alpha})`;
     };
 
-    // Crear un gradiente sutil con el color personalizado
     return {
       background: `linear-gradient(135deg, 
-        ${hexToRgba(backgroundColor, 0.1)}, 
+        ${hexToRgba(backgroundColor, 0.15)}, 
         ${hexToRgba(backgroundColor, 0.05)}
       )`,
     };
@@ -52,22 +53,29 @@ export function Benefits({ content }: BenefitsProps) {
         </div>
 
         <div className="max-w-7xl mx-auto">
-          {/* Tabs Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {benefits?.map((benefit, index) => (
-              <button
-                key={benefit.sys.id}
-                onClick={() => setActiveBenefit(index)}
-                className={cn(
-                  "px-6 py-3 rounded-lg transition-all duration-300",
-                  activeBenefit === index
-                    ? "bg-primary text-primary-foreground scale-105"
-                    : "bg-muted hover:bg-muted/80"
-                )}
-              >
-                {benefit.fields.title}
-              </button>
-            ))}
+          {/* Pestañas */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            <div className="card-gradient rounded-full p-1 flex gap-2">
+              {benefits?.map((benefit, index) => (
+                <button
+                  key={benefit.sys.id}
+                  onClick={() => setActiveBenefit(index)}
+                  className={cn(
+                    "px-6 py-2 rounded-full transition-all duration-300",
+                    activeBenefit === index
+                      ? "bg-primary text-primary-foreground"
+                      : "hover:bg-muted/50"
+                  )}
+                  style={
+                    activeBenefit === index && accentColor
+                      ? { backgroundColor: accentColor }
+                      : undefined
+                  }
+                >
+                  {benefit.fields.tabLabel || `Beneficio ${index + 1}`}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Content Area */}
@@ -83,76 +91,113 @@ export function Benefits({ content }: BenefitsProps) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5 }}
-                  className={cn(
-                    "grid gap-8 items-center",
-                    imagePosition === "right"
-                      ? "md:grid-cols-[1fr,auto]"
-                      : "md:grid-cols-[auto,1fr]"
-                  )}
+                  transition={{ duration: 0.2 }}
+                  className="card-gradient rounded-lg p-12"
                 >
-                  {/* Content Side */}
                   <div
                     className={cn(
-                      "card-gradient rounded-lg p-8",
-                      benefit.fields.accentColor
-                        ? `border-l-4 border-[${benefit.fields.accentColor}]`
-                        : ""
+                      "grid gap-12 items-center",
+                      imagePosition === "right"
+                        ? "md:grid-cols-[1fr,1.2fr]"
+                        : "md:grid-cols-[1.2fr,1fr]"
                     )}
                   >
-                    <h3 className="text-2xl font-bold mb-4">
-                      {benefit.fields.title}
-                    </h3>
-                    <p className="text-foreground/80 mb-6">
-                      {benefit.fields.description}
-                    </p>
+                    {/* Content Side */}
+                    <div className="flex flex-col justify-between h-full space-y-6 ">
+                      <div>
+                        <h3 className="text-2xl font-bold mb-4 ">
+                          {benefit.fields.title}
+                        </h3>
+                        <p className="text-foreground/80 text-lg">
+                          {benefit.fields.description}
+                        </p>
 
-                    {/* CTA Buttons */}
-                    {(benefit.fields.ctaText ||
-                      benefit.fields.secondaryCtaText) && (
-                      <div className="flex flex-wrap gap-4">
-                        {benefit.fields.ctaText && benefit.fields.ctaUrl && (
-                          <Button asChild>
-                            <Link href={benefit.fields.ctaUrl}>
-                              {benefit.fields.ctaText}
-                            </Link>
-                          </Button>
-                        )}
-                        {benefit.fields.secondaryCtaText &&
-                          benefit.fields.secondaryCtaUrl && (
-                            <Button variant="outline" asChild>
-                              <Link href={benefit.fields.secondaryCtaUrl}>
-                                {benefit.fields.secondaryCtaText}
+                        {/* Features List */}
+                        {benefit.fields.features &&
+                          benefit.fields.features.length > 0 && (
+                            <ul className="space-y-3 mt-4">
+                              {benefit.fields.features.map((feature, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-start gap-3"
+                                >
+                                  <div className="mt-1">
+                                    <Check
+                                      className="h-5 w-5"
+                                      style={
+                                        accentColor
+                                          ? { color: accentColor }
+                                          : undefined
+                                      }
+                                    />
+                                  </div>
+                                  <span className="text-foreground/80">
+                                    {feature}
+                                  </span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                      </div>
+
+                      {/* CTA Buttons */}
+                      {(benefit.fields.ctaText ||
+                        benefit.fields.secondaryCtaText) && (
+                        <div className="flex flex-wrap gap-4 pt-4">
+                          {benefit.fields.ctaText && benefit.fields.ctaUrl && (
+                            <Button
+                              asChild
+                              style={
+                                accentColor
+                                  ? { backgroundColor: accentColor }
+                                  : undefined
+                              }
+                            >
+                              <Link href={benefit.fields.ctaUrl}>
+                                {benefit.fields.ctaText}
                               </Link>
                             </Button>
                           )}
-                      </div>
+                          {benefit.fields.secondaryCtaText &&
+                            benefit.fields.secondaryCtaUrl && (
+                              <Button variant="outline" asChild>
+                                <Link href={benefit.fields.secondaryCtaUrl}>
+                                  {benefit.fields.secondaryCtaText}
+                                </Link>
+                              </Button>
+                            )}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Image Side */}
+                    {benefit.fields.image && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.1, delay: 0.2 }}
+                        className={cn(
+                          "relative aspect-[4/3] w-full",
+                          imagePosition === "left"
+                            ? "order-first"
+                            : "order-last"
+                        )}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-background/70 to-background/60 rounded-xl backdrop-blur-[5px]">
+                          <div className="absolute inset-0 border rounded-xl">
+                            <img
+                              src={`https:${benefit.fields.image.fields.file.url}`}
+                              alt={
+                                benefit.fields.image.fields.title ||
+                                benefit.fields.title
+                              }
+                              className="w-full h-full object-cover rounded-xl"
+                            />
+                          </div>
+                        </div>
+                      </motion.div>
                     )}
                   </div>
-
-                  {/* Image Side */}
-                  {benefit.fields.image && (
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      className="relative rounded-lg overflow-hidden shadow-xl"
-                    >
-                      <img
-                        src={`https:${benefit.fields.image.fields.file.url}`}
-                        alt={
-                          benefit.fields.image.fields.title ||
-                          benefit.fields.title
-                        }
-                        className="w-full h-auto max-w-[500px] object-cover rounded-lg"
-                        style={
-                          benefit.fields.imageWidth
-                            ? { width: benefit.fields.imageWidth }
-                            : undefined
-                        }
-                      />
-                    </motion.div>
-                  )}
                 </motion.div>
               );
             })}

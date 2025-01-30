@@ -97,7 +97,7 @@ export function Hero({ content }: HeroProps) {
                     style={{ maxWidth: computedImageWidth }}
                   />
                 </div>
-                <div className="text-center w-full md:w-1/2 order-1 md:order-none">
+                <div className="text-start w-full md:w-1/2 order-1 md:order-none">
                   <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mt-8 md:mt-20 mb-6">
                     {title}{" "}
                     <span className="text-gradient">{highlightedText}</span>

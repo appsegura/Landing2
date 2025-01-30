@@ -22,572 +22,671 @@
 
 #### 📱 Social Link
 
-**Content Type ID:** `socialLink` **Descripción:** Gestiona los enlaces a redes sociales con sus respectivos íconos.
+**Content Type ID:** `socialLink` **Nombre para mostrar:** "Social Link" **Descripción:** Gestiona los enlaces a redes sociales con sus respectivos íconos.
 
-- `redSocial` (Short text)
+Fields:
+
+- "Red Social" (Short text)
+
   - Required
   - Validations: [Facebook, Twitter, Instagram, LinkedIn, YouTube, WhatsApp, TikTok]
-  - **Help text**: "Selecciona la red social. Esto determinará el ícono mostrado automáticamente"
-- `url` (Short text)
+  - **Help text**: "Selecciona la red social para mostrar automáticamente su ícono en el sitio. Las opciones disponibles son las redes sociales más populares"
+
+- "Url" (Short text)
   - Required
   - Pattern: ^https?://.\*$
-  - **Help text**: "URL completa del perfil social. Debe comenzar con http:// o https://"
+  - **Help text**: "URL completa del perfil social (debe comenzar con http:// o https://). Ejemplo: https://twitter.com/tuempresa"
 
-#### 🎁 Benefit
+#### 🎯 Benefit
 
-**Content Type ID:** `benefit` **Descripción:** Define los beneficios o características destacadas del producto/servicio.
+**Content Type ID:** `benefit` **Nombre para mostrar:** "Benefit" **Descripción:** Define los beneficios o características destacadas del producto/servicio.
 
-- `title` (Short text)
-  - Required
-  - **Help text**: "Título corto y atractivo del beneficio. Máximo 60 caracteres"
-- `description` (Long text)
-  - Required
-  - **Help text**: "Descripción detallada del beneficio. Enfócate en el valor para el usuario. Máximo 200 caracteres"
-- `icon` (Media - Image)
+Fields:
+
+- "Tab Label" (Short text)
+
   - Optional
-  - **Help text**: "Ícono SVG o PNG con fondo transparente. Tamaño recomendado 64x64px"
-- `accentColor` (Short text)
+  - **Help text**: "Texto que aparecerá en la pestaña de selección de beneficios. Recomendado: menos de 30 caracteres"
+
+- "Title" (Short text)
+
+  - Required
+  - **Help text**: "Título del beneficio. Debe ser claro y llamativo, idealmente en menos de 10 palabras"
+
+- "Description" (Rich Text)
+
+  - Required
+  - **Help text**: "Descripción detallada del beneficio. Explica en una o dos frases cómo este beneficio ayuda al usuario"
+
+- "Features" (Short text - List)
+
   - Optional
-  - Pattern: ^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$
-  - **Help text**: "Color hexadecimal (ej: #FF0000) para destacar este beneficio"
+  - **Help text**: "Lista de características específicas del beneficio. Cada elemento debe ser una frase corta y concisa, como 'Fácil de usar' o 'Alta seguridad'"
+
+- "Image" (Media - Image)
+
+  - Optional
+  - **Help text**: "Imagen ilustrativa del beneficio. Recomendado: 800x600px mínimo, formato 4:3"
+
+- "Image Position" (Short text)
+
+  - Optional
+  - Default: "right"
+  - Validations: [right, left]
+  - **Help text**: "Posición de la imagen respecto al texto. 'right' para derecha, 'left' para izquierda"
+
+- "Cta Text" (Short text)
+
+  - Optional
+  - **Help text**: "Texto para el botón principal de llamada a la acción. Máximo 20 caracteres"
+
+- "Cta Url" (Short text)
+
+  - Optional
+  - Pattern: ^https?://.\*$
+  - **Help text**: "URL completa para el botón principal. Debe comenzar con http:// o https://"
+
+- "Secondary Cta Text" (Short text)
+
+  - Optional
+  - **Help text**: "Texto para el botón secundario. Máximo 20 caracteres"
+
+- "Secondary Cta Url" (Short text)
+  - Optional
+  - Pattern: ^https?://.\*$
+  - **Help text**: "URL completa para el botón secundario. Debe comenzar con http:// o https://"
 
 #### 🔄 Process Step
 
-**Content Type ID:** `processStep` **Descripción:** Define los pasos de un proceso o flujo de trabajo.
+**Content Type ID:** `processStep` **Nombre para mostrar:** "Process Step" **Descripción:** Define los pasos de un proceso o características destacadas.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título breve que describe este paso. Sé específico y accionable"
-- `description` (Long text)
+  - **Help text**: "Título breve y descriptivo del paso. Debe ser claro y conciso, máximo 40 caracteres"
+
+- "Description" (Long text)
+
   - Required
-  - **Help text**: "Explicación detallada de lo que sucede en este paso"
-- `icon` (Short text)
+  - **Help text**: "Descripción detallada que explica qué sucede en este paso y su beneficio para el usuario. Máximo 120 caracteres"
+
+- "Icon" (Short text)
+
   - Required
-  - **Help text**: "Nombre del ícono de Lucide (ej: 'arrow-right', 'check-circle')"
-- `ctaText` (Short text)
+  - **Help text**: "Nombre del ícono de Lucide React que mejor represente este paso. Consulta las opciones en https://lucide.dev"
+
+- "Cta Text" (Short text)
+
   - Optional
-  - **Help text**: "Texto del botón de acción para este paso (si es necesario)"
-- `ctaUrl` (Short text)
+  - **Help text**: "Texto para el botón de acción opcional. Debe ser corto y claro, máximo 20 caracteres"
+
+- "Cta Url" (Short text)
   - Optional
   - Pattern: ^https?://.\*$
-  - **Help text**: "URL para el botón de acción de este paso"
+  - **Help text**: "URL completa donde llevará el botón de acción. Debe comenzar con http:// o https://"
 
-#### 💎 Pricing Plan
+#### 💰 Pricing Plan
 
-**Content Type ID:** `pricingPlan` **Descripción:** Define los planes de precios y sus características.
+**Content Type ID:** `pricingPlan` **Nombre para mostrar:** "Pricing Plan" **Descripción:** Define los planes de precios y sus características.
 
-- `name` (Short text)
+Fields:
+
+- "Name" (Short text)
+
   - Required
-  - **Help text**: "Nombre del plan (ej: 'Básico', 'Pro', 'Enterprise')"
-- `price` (Short text)
+  - **Help text**: "Nombre del plan que sea fácil de entender (ej: 'Básico', 'Pro', 'Enterprise')"
+
+- "Price" (Short text)
+
   - Required
-  - **Help text**: "Precio con moneda y periodicidad (ej: '$99/mes', 'Desde $199')"
-- `description` (Long text)
+  - **Help text**: "Precio con moneda y periodicidad si aplica (ej: '$99/mes', 'Desde $199')"
+
+- "Description" (Long text)
+
   - Required
-  - **Help text**: "Descripción breve del valor principal del plan. Máximo 100 caracteres"
-- `features` (Short text - list)
+  - **Help text**: "Descripción breve que resalta el valor principal del plan. Máximo 100 caracteres"
+
+- "Features" (Short text - List)
+
   - Required
-  - **Help text**: "Lista de características incluidas. Una por línea"
-- `highlightedText` (Boolean)
+  - **Help text**: "Lista de características incluidas en el plan. Cada elemento debe ser conciso y claro"
+
+- "Highlighted Text" (Boolean)
+
   - Required
   - Default: false
-  - **Help text**: "Activa para destacar este plan como la mejor opción"
-- `promotionalText` (Short text)
+  - **Help text**: "Activa para destacar este plan como la mejor opción o más popular"
+
+- "Promotional Text" (Short text)
+
   - Optional
-  - **Help text**: "Texto promocional que aparece sobre el plan (ej: '¡Más popular!')"
-- `payLinkText` (Short text)
+  - **Help text**: "Texto promocional que aparece sobre el plan (ej: '¡Más popular!', '¡Mejor valor!')"
+
+- "Pay Link Text" (Short text)
+
   - Required
-  - **Help text**: "Texto del botón de compra. Máximo 20 caracteres"
-- `payLink` (Short text)
+  - **Help text**: "Texto del botón de compra. Debe ser claro y accionable, máximo 20 caracteres"
+
+- "Pay Link" (Short text)
   - Required
   - Pattern: ^https?://.\*$
-  - **Help text**: "URL donde el usuario puede contratar este plan"
+  - **Help text**: "URL donde el usuario puede contratar este plan. Debe comenzar con http:// o https://"
 
-#### 👤 Team Member
+#### ❓ FAQ
 
-**Content Type ID:** `teamMember` **Descripción:** Información sobre los miembros del equipo.
+**Content Type ID:** `faq` **Nombre para mostrar:** "FAQ" **Descripción:** Preguntas frecuentes y sus respuestas.
 
-- `name` (Short text)
-  - Required
-  - **Help text**: "Nombre completo del miembro del equipo"
-- `role` (Short text)
-  - Required
-  - **Help text**: "Cargo o posición en la empresa"
-- `bio` (Long text)
-  - Required
-  - **Help text**: "Biografía breve. Máximo 300 caracteres"
-- `image` (Media - Image)
-  - Required
-  - **Help text**: "Foto profesional. Recomendado: 400x400px, formato cuadrado"
-- `socialLinks` (Array of References - socialLink)
-  - Optional
-  - **Help text**: "Enlaces a perfiles profesionales en redes sociales"
+Fields:
 
-#### ❔ FAQ
+- "Question" (Short text)
 
-**Content Type ID:** `faq` **Descripción:** Preguntas frecuentes y sus respuestas.
+  - Required
+  - **Help text**: "Pregunta frecuente desde la perspectiva del usuario. Debe ser clara y directa"
 
-- `question` (Short text)
+- "Answer" (Long text)
   - Required
-  - **Help text**: "Pregunta frecuente desde la perspectiva del usuario"
-- `answer` (Long text)
-  - Required
-  - **Help text**: "Respuesta clara y concisa. Evita jerga técnica"
+  - **Help text**: "Respuesta clara y concisa. Evita jerga técnica y usa un lenguaje amigable"
 
 ### 2️⃣ Secciones
 
 #### 🅰️ Header Section
 
-**Content Type ID:** `headerSection` **Descripción:** Configura el encabezado principal del sitio.
+**Content Type ID:** `headerSection` **Nombre para mostrar:** "Header Section" **Descripción:** Configura el encabezado principal del sitio.
 
-- `logo` (Media - Image)
+Fields:
+
+- "Logo" (Media - Image)
+
   - Required
-  - **Help text**: "Logo principal. SVG o PNG con fondo transparente. Altura: 40px"
-- `widthLogo` (Number)
+  - **Help text**: "Logo principal del sitio. Preferiblemente SVG o PNG con fondo transparente. Altura recomendada: 40px"
+
+- "Width Logo" (Number)
+
   - Optional
   - Default: 150
-  - **Help text**: "Ancho del logo en píxeles"
-- `ctaText` (Short text)
+  - **Help text**: "Ancho del logo en píxeles. Ajusta según el tamaño de tu logo"
+
+- "Cta Text" (Short text)
+
   - Required
-  - **Help text**: "Texto del botón principal. Máximo 15 caracteres"
-- `ctaUrl` (Short text)
+  - **Help text**: "Texto del botón principal en el header. Debe ser corto y llamativo, máximo 15 caracteres"
+
+- "Cta Url" (Short text)
   - Required
   - Pattern: ^https?://.\*$
-  - **Help text**: "URL del botón principal"
+  - **Help text**: "URL del botón principal. Debe comenzar con http:// o https://"
 
 #### 🦸 Hero Section
 
-**Content Type ID:** `heroSection` **Descripción:** Sección principal de la página de inicio.
+**Content Type ID:** `heroSection` **Nombre para mostrar:** "Hero Section" **Descripción:** Sección principal de la página de inicio.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título principal impactante. Máximo 70 caracteres"
-- `highlightedText` (Short text)
+  - **Help text**: "Título principal de la página. Debe ser impactante y claro, máximo 70 caracteres"
+
+- "Highlighted Text" (Short text)
+
   - Optional
-  - **Help text**: "Parte del título que se destacará visualmente"
-- `description` (Long text)
+  - **Help text**: "Parte del título que se destacará visualmente con un gradiente de color"
+
+- "Description" (Long text)
+
   - Required
-  - **Help text**: "Subtítulo que amplía el título. Máximo 150 caracteres"
-- `ctaText` (Short text)
+  - **Help text**: "Subtítulo que amplía el título principal. Debe ser claro y persuasivo, máximo 150 caracteres"
+
+- "Cta Text" (Short text)
+
   - Required
-  - **Help text**: "Texto del botón principal. Máximo 20 caracteres"
-- `ctaUrl` (Short text)
+  - **Help text**: "Texto del botón principal. Debe ser accionable, máximo 20 caracteres"
+
+- "Cta Url" (Short text)
+
   - Required
   - Pattern: ^https?://.\*$
-  - **Help text**: "URL del botón principal"
-- `image` (Media - Image)
+  - **Help text**: "URL del botón principal. Debe comenzar con http:// o https://"
+
+- "Image" (Media - Image)
+
   - Optional
-  - **Help text**: "Imagen principal. Recomendado: 1200x800px"
-- `imagePosition` (Short text)
+  - **Help text**: "Imagen principal del hero. Recomendado: 1200x800px, formato 3:2"
+
+- "Image Position" (Short text)
+
   - Optional
   - Default: "right"
   - Validations: [right, left, top, bottom, background]
-  - **Help text**: "Posición de la imagen respecto al texto"
-- `imageWidth` (Number)
+  - **Help text**: "Posición de la imagen respecto al texto. 'background' la usará como fondo con overlay"
+
+- "Image Width" (Number)
+
   - Optional
-  - **Help text**: "Ancho máximo de la imagen en píxeles"
-- `isVisible` (Boolean)
+  - **Help text**: "Ancho máximo de la imagen en píxeles cuando no se usa como fondo"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
 #### 🤝 Partners Section
 
-**Content Type ID:** `partnersSection` **Descripción:** Muestra logos de partners o clientes.
+**Content Type ID:** `partnersSection` **Nombre para mostrar:** "Partners Section" **Descripción:** Muestra logos de partners o clientes.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título de la sección de partners"
-- `subtitle` (Long text)
+  - **Help text**: "Título de la sección que introduce los partners o clientes"
+
+- "Subtitle" (Long text)
+
   - Optional
-  - **Help text**: "Texto descriptivo sobre los partners"
-- `logos` (Array of Media)
+  - **Help text**: "Texto descriptivo que proporciona contexto sobre los partners mostrados"
+
+- "Logos" (Media - Multiple images)
+
   - Required
-  - **Help text**: "Logos de partners. SVG o PNG con fondo transparente"
-- `displayMode` (Short text)
+  - **Help text**: "Logos de partners. Preferiblemente SVG o PNG con fondo transparente. Altura recomendada: 60px"
+
+- "Display Mode" (Short text)
+
   - Required
   - Validations: [grid, scroll]
-  - **Help text**: "'grid' para cuadrícula, 'scroll' para carrusel"
-- `scrollSpeed` (Number)
+  - **Help text**: "'grid' para mostrar en cuadrícula fija, 'scroll' para carrusel automático"
+
+- "Scroll Speed" (Number)
+
   - Optional
   - Default: 30
-  - **Help text**: "Velocidad del carrusel (1-100)"
-- `height` (Number)
+  - **Help text**: "Velocidad del carrusel (1-100). Solo aplica si Display Mode es 'scroll'"
+
+- "Height" (Number)
+
   - Optional
   - Default: 60
-  - **Help text**: "Altura en píxeles para todos los logos"
-- `isVisible` (Boolean)
+  - **Help text**: "Altura en píxeles para todos los logos. Mantener consistencia visual"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
 #### 📈 Process Section
 
-**Content Type ID:** `processSection` **Descripción:** Muestra los pasos de un proceso.
+**Content Type ID:** `processSection` **Nombre para mostrar:** "Process Section" **Descripción:** Muestra los pasos de un proceso o características destacadas.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título que describe el proceso"
-- `subtitle` (Long text)
+  - **Help text**: "Título principal que describe el proceso o conjunto de características"
+
+- "Subtitle" (Long text)
+
   - Required
-  - **Help text**: "Descripción breve del proceso"
-- `steps` (Array of References - processStep)
+  - **Help text**: "Descripción general que introduce los pasos o características"
+
+- "Steps" (References - Multiple Process Step)
+
   - Required
-  - **Help text**: "Pasos del proceso en orden. 2-6 pasos recomendados"
-- `isVisible` (Boolean)
+  - **Help text**: "Pasos del proceso en orden. Se recomienda entre 3 y 6 pasos para mejor visualización"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
-
-#### 🎥 Product Demo Section
-
-**Content Type ID:** `productDemoSection` **Descripción:** Sección para mostrar demos o videos del producto.
-
-- `title` (Short text)
-  - Required
-  - **Help text**: "Título que introduce la demostración"
-- `subtitle` (Short text)
-  - Optional
-  - **Help text**: "Subtítulo complementario"
-- `descriptionTitle` (Short text)
-  - Optional
-  - **Help text**: "Título de la descripción del video"
-- `description` (Long text)
-  - Optional
-  - **Help text**: "Texto que contextualiza el video"
-- `videoUrl` (Short text)
-  - Required
-  - Pattern: ^https?://.\*$
-  - **Help text**: "URL del video (YouTube o Vimeo)"
-- `videoPosition` (Short text)
-  - Required
-  - Default: "right"
-  - Validations: [right, left, bottom, top]
-  - **Help text**: "Posición del video respecto al texto"
-- `aspectRatio` (Short text)
-  - Required
-  - Default: "16:9"
-  - Validations: [16:9, 4:3, 1:1, 9:16]
-  - **Help text**: "Proporción del video"
-- `videoHeight` (Number)
-  - Optional
-  - **Help text**: "Altura máxima del video en píxeles"
-- `ctaText` (Short text)
-  - Optional
-  - **Help text**: "Texto del botón de acción"
-- `ctaUrl` (Short text)
-  - Optional
-  - Pattern: ^https?://.\*$
-  - **Help text**: "URL para el botón de acción"
-- `isVisible` (Boolean)
-  - Required
-  - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
-
-#### 💰 Pricing Section
-
-**Content Type ID:** `pricingSection` **Descripción:** Muestra los planes de precios disponibles.
-
-- `title` (Short text)
-  - Required
-  - **Help text**: "Título de la sección de precios"
-- `subtitle` (Long text)
-  - Required
-  - **Help text**: "Texto introductorio para los planes"
-- `plans` (Array of References - pricingPlan)
-  - Required
-  - **Help text**: "Planes a mostrar. Ordenar de menor a mayor precio"
-- `isVisible` (Boolean)
-  - Required
-  - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
 #### 🎯 Benefits Section
 
-**Content Type ID:** `benefitsSection` **Descripción:** Destaca los beneficios clave del producto/servicio.
+**Content Type ID:** `benefitsSection` **Nombre para mostrar:** "Benefits Section" **Descripción:** Destaca los beneficios clave del producto/servicio.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título principal de la sección"
-- `subtitle` (Long text)
+  - **Help text**: "Título principal de la sección de beneficios. Debe ser llamativo y claro, máximo 60 caracteres"
+
+- "Subtitle" (Long text)
+
   - Optional
-  - **Help text**: "Subtítulo que refuerza el título"
-- `benefits` (Array of References - benefit)
+  - **Help text**: "Subtítulo que introduce los beneficios. Explica brevemente el valor general"
+
+- "Benefits" (References - Multiple Benefit)
+
   - Required
-  - **Help text**: "Lista de beneficios a mostrar"
-- `screenshot` (Media - Image)
+  - **Help text**: "Lista de beneficios a mostrar. Cada beneficio puede incluir título, descripción, imagen y características"
+
+- "Background Color" (Short text)
+
   - Optional
-  - **Help text**: "Captura de pantalla o imagen ilustrativa"
-- `screenshotDescription` (Short text)
+  - Pattern: ^#([A-Fa-f0-9]{6})$
+  - **Help text**: "Color de fondo de la sección en formato HEX (#RRGGBB). Si no se especifica, se usará el color del tema"
+
+- "Accent Color" (Short text)
+
   - Optional
-  - **Help text**: "Texto descriptivo para la imagen"
-- `ctaText` (Short text)
-  - Optional
-  - **Help text**: "Texto del botón de llamada a la acción"
-- `ctaUrl` (Short text)
-  - Optional
-  - Pattern: ^https?://.\*$
-  - **Help text**: "URL para el botón de llamada a la acción"
-- `layout` (Short text)
-  - Optional
-  - Default: "grid"
-  - Validations: [grid, split]
-  - **Help text**: "Estilo de layout: 'grid' para cuadrícula, 'split' para dividido"
-- `isVisible` (Boolean)
+  - Pattern: ^#([A-Fa-f0-9]{6})$
+  - **Help text**: "Color de acento para elementos destacados. Si no se especifica, se usará el color primario del tema"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
-#### 👥 Team Section
+#### 💰 Pricing Section
 
-**Content Type ID:** `teamSection` **Descripción:** Presenta al equipo de la empresa.
+**Content Type ID:** `pricingSection` **Nombre para mostrar:** "Pricing Section" **Descripción:** Muestra los planes de precios disponibles.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título de la sección del equipo"
-- `subtitle` (Long text)
+  - **Help text**: "Título principal de la sección de precios. Debe ser claro y atractivo"
+
+- "Subtitle" (Long text)
+
   - Required
-  - **Help text**: "Texto que presenta al equipo"
-- `members` (Array of References - teamMember)
+  - **Help text**: "Texto introductorio que ayuda a los usuarios a elegir el plan adecuado"
+
+- "Plans" (References - Multiple Pricing Plan)
+
   - Required
-  - **Help text**: "Miembros del equipo a mostrar"
-- `isVisible` (Boolean)
+  - **Help text**: "Planes a mostrar. Ordénalos de menor a mayor precio para mejor comprensión"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
 #### ❓ FAQ Section
 
-**Content Type ID:** `faqSection` **Descripción:** Sección de preguntas frecuentes.
+**Content Type ID:** `faqSection` **Nombre para mostrar:** "FAQ Section" **Descripción:** Sección de preguntas frecuentes.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título de la sección FAQ"
-- `subtitle` (Long text)
+  - **Help text**: "Título de la sección FAQ. Generalmente 'Preguntas Frecuentes' o similar"
+
+- "Subtitle" (Long text)
+
   - Required
-  - **Help text**: "Texto introductorio para las FAQ"
-- `faqs` (Array of References - faq)
+  - **Help text**: "Texto introductorio que anima a los usuarios a explorar las FAQ"
+
+- "Faqs" (References - Multiple FAQ)
+
   - Required
-  - **Help text**: "Preguntas frecuentes a mostrar"
-- `columns` (Number)
+  - **Help text**: "Lista de preguntas frecuentes. Organízalas por relevancia o tema"
+
+- "Columns" (Number)
+
   - Optional
   - Default: 1
   - Validations: [1, 2]
-  - **Help text**: "Número de columnas para mostrar las FAQ"
-- `isVisible` (Boolean)
+  - **Help text**: "Número de columnas para mostrar las FAQ. 1 para lista simple, 2 para dos columnas"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
 #### 🎯 CTA Section
 
-**Content Type ID:** `ctaSection` **Descripción:** Sección de llamada a la acción.
+**Content Type ID:** `ctaSection` **Nombre para mostrar:** "CTA Section" **Descripción:** Sección de llamada a la acción.
 
-- `title` (Short text)
+Fields:
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título llamativo para la sección"
-- `subtitle` (Long text)
+  - **Help text**: "Título llamativo que impulsa a la acción. Debe ser persuasivo y directo"
+
+- "Subtitle" (Long text)
+
   - Required
-  - **Help text**: "Texto persuasivo que impulsa a la acción"
-- `ctaText` (Short text)
+  - **Help text**: "Texto que refuerza el título y explica el valor de tomar acción"
+
+- "Cta Text" (Short text)
+
   - Required
-  - **Help text**: "Texto del botón principal"
-- `ctaUrl` (Short text)
+  - **Help text**: "Texto del botón principal. Debe ser accionable y claro, máximo 20 caracteres"
+
+- "Cta Url" (Short text)
+
   - Required
   - Pattern: ^https?://.\*$
-  - **Help text**: "URL del botón principal"
-- `isVisible` (Boolean)
+  - **Help text**: "URL del botón principal. Debe comenzar con http:// o https://"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad de la sección"
+  - **Help text**: "Controla la visibilidad de la sección en la página"
 
 #### 👣 Footer Section
 
-**Content Type ID:** `footerSection` **Descripción:** Configura el pie de página del sitio.
+**Content Type ID:** `footerSection` **Nombre para mostrar:** "Footer Section" **Descripción:** Configura el pie de página del sitio.
 
-- `logo` (Media - Image)
+Fields:
+
+- "Logo" (Media - Image)
+
   - Required
-  - **Help text**: "Logo para el footer. SVG o PNG con fondo transparente"
-- `widthLogo` (Number)
+  - **Help text**: "Logo para el footer. Preferiblemente SVG o PNG con fondo transparente"
+
+- "Width Logo" (Number)
+
   - Optional
   - Default: 150
-  - **Help text**: "Ancho del logo en píxeles"
-- `socialLinks` (Array of References - socialLink)
+  - **Help text**: "Ancho del logo en píxeles en el footer"
+
+- "Social Links" (References - Multiple Social Link)
+
   - Required
-  - **Help text**: "Enlaces a redes sociales"
-- `email` (Short text)
+  - **Help text**: "Enlaces a redes sociales a mostrar en el footer"
+
+- "Email" (Short text)
+
   - Required
   - Pattern: ^[^\s@]+@[^\s@]+\.[^\s@]+$
-  - **Help text**: "Email de contacto principal"
-- `phone` (Short text)
+  - **Help text**: "Email de contacto principal de la empresa"
+
+- "Phone" (Short text)
+
   - Required
-  - **Help text**: "Teléfono de contacto. Formato internacional"
-- `copyright` (Short text)
+  - **Help text**: "Teléfono de contacto. Usar formato internacional (+XX XXX XXX XXXX)"
+
+- "Copyright" (Short text)
+
   - Required
-  - **Help text**: "Texto de derechos de autor"
-- `isVisible` (Boolean)
+  - **Help text**: "Texto de derechos de autor. Incluir año y nombre de la empresa"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla la visibilidad del footer"
+  - **Help text**: "Controla la visibilidad del footer en la página"
 
 ### 3️⃣ Páginas
 
 #### 🏠 Landing Page
 
-**Content Type ID:** `landingPage` **Descripción:** Página principal del sitio.
+**Content Type ID:** `landingPage` **Nombre para mostrar:** "Landing Page" **Descripción:** Página principal del sitio.
 
-- `internalName` (Short text)
+Fields:
+
+- "Internal Name" (Short text)
+
   - Required
-  - **Help text**: "Nombre interno para identificar esta página en el CMS"
-- `slug` (Short text)
+  - **Help text**: "Nombre interno para identificar esta página en el CMS. Solo visible para editores"
+
+- "Slug" (Short text)
+
   - Required
   - Default: "/"
   - Pattern: ^/$
   - Unique
   - **Help text**: "URL de la página principal. Mantener como '/'"
-- `title` (Short text)
+
+- "Title" (Short text)
+
   - Required
-  - **Help text**: "Título SEO de la página. Máximo 60 caracteres"
-- `description` (Long text)
+  - **Help text**: "Título SEO de la página. Incluye palabras clave importantes, máximo 60 caracteres"
+
+- "Description" (Long text)
+
   - Required
-  - **Help text**: "Meta descripción SEO. 150-160 caracteres"
-- `sections` (Array of References)
-  - Required
-  - **Help text**: "Secciones que compondrán la página. Arrastra para reordenar"
-- `googleTagManager` (Short text)
+  - **Help text**: "Meta descripción SEO. Describe la página de forma atractiva, 150-160 caracteres"
+
+- "Theme" (Short text)
+
   - Optional
-  - **Help text**: "ID de Google Tag Manager (GTM-XXXXXX)"
-- `valeiaChat` (Boolean)
+  - **Help text**: "Tema visual a utilizar. Si no se especifica, se usará el tema por defecto"
+
+- "Custom Theme" (Reference - Single Custom Theme)
+
+  - Optional
+  - **Help text**: "Tema personalizado con colores y estilos específicos"
+
+- "Sections" (References - Multiple)
+
+  - Required
+  - **Help text**: "Secciones que compondrán la página. Arrastra para reordenar según necesites"
+
+- "Google Tag Manager" (Short text)
+
+  - Optional
+  - **Help text**: "ID de Google Tag Manager (formato: GTM-XXXXXX) para análisis"
+
+- "Valeia Chat" (Boolean)
+
   - Optional
   - Default: false
-  - **Help text**: "Activar widget de chat de ValeIA"
-- `isVisible` (Boolean)
+  - **Help text**: "Activa el widget de chat de ValeIA en la página"
+
+- "Is Visible" (Boolean)
   - Required
   - Default: true
-  - **Help text**: "Controla si la página está publicada"
+  - **Help text**: "Controla si la página está publicada y visible"
 
 #### 📄 Dynamic Page
 
-**Content Type ID:** `dynamicPage` **Descripción:** Páginas dinámicas como blog posts o páginas de contenido.
-
-- `title` (Short text)
-  - Required
-  - **Help text**: "Título principal de la página"
-- `slug` (Short text)
-  - Required
-  - Pattern: ^[a-z0-9-]+$
-  - Unique
-  - **Help text**: "URL amigable. Use guiones, solo minúsculas y números"
-- `content` (Rich Text)
-  - Required
-  - **Help text**: "Contenido principal de la página"
-- `featuredImage` (Media - Image)
-  - Optional
-  - **Help text**: "Imagen destacada. Recomendado: 1200x630px"
-- `isVisible` (Boolean)
-  - Required
-  - Default: true
-  - **Help text**: "Controla la visibilidad de la página"
-- `label` (Short text)
-  - Required
-  - **Help text**: "Texto para el menú de navegación"
-- `location` (Short text)
-  - Required
-  - Validations: [header, footer, blog, null]
-  - **Help text**: "Ubicación del enlace en la navegación"
-- `author` (Short text)
-  - Optional
-  - **Help text**: "Autor del contenido (para blogs)"
-- `publishDate` (Date and time)
-  - Optional
-  - **Help text**: "Fecha de publicación (para blogs)"
-- `tags` (Short text - Array)
-  - Optional
-  - **Help text**: "Categorías o etiquetas para clasificar el contenido"
-
-## 📝 Notas de Implementación
-
-### Validaciones Importantes
-
-1. Asegurarse de que todos los patrones (regex) estén correctamente implementados
-2. Verificar que las referencias entre contenidos estén correctamente configuradas
-3. Respetar los valores por defecto especificados
-4. Mantener los campos requeridos como obligatorios
-
-### Mejores Prácticas
-
-1. Mantener consistencia en el nombramiento de los campos
-2. Usar los help texts proporcionados para guiar a los editores
-3. Probar todas las validaciones antes de usar en producción
-4. Verificar que las referencias circulares no estén presentes
-
-### Consideraciones de SEO
-
-1. Asegurar que los campos de título y descripción tengan límites de caracteres apropiados
-2. Mantener los slugs únicos y bien formados
-3. Utilizar los campos de SEO opcionales cuando sea posible
-
-### Mantenimiento
-
-1. Revisar periódicamente los enlaces y referencias
-2. Actualizar los help texts según el feedback de los editores
-3. Mantener las validaciones actualizadas según las necesidades del proyecto
-
-# Custom Theme Content Type
-
-Content Type ID: `customTheme`
+**Content Type ID:** `dynamicPage` **Nombre para mostrar:** "Dynamic Page" **Descripción:** Páginas dinámicas como blog posts o páginas de contenido.
 
 Fields:
 
-1. `name` (Short text)
+- "Title" (Short text)
 
-   - Required
-   - Help text: "Nombre para identificar este tema personalizado"
+  - Required
+  - **Help text**: "Título principal de la página. Debe ser descriptivo y contener palabras clave relevantes"
 
-2. `primaryColor` (Short text)
+- "Slug" (Short text)
 
-   - Required
-   - Pattern: ^#([A-Fa-f0-9]{6})$
-   - Help text: "Color principal para botones y elementos destacados (formato: #RRGGBB)"
-   - Default: "#7c3aed"
+  - Required
+  - Pattern: ^[a-z0-9-]+$
+  - Unique
+  - **Help text**: "URL amigable de la página. Usar guiones y minúsculas, sin espacios ni caracteres especiales"
 
-3. `accentColor` (Short text)
+- "Content" (Rich Text)
 
-   - Optional
-   - Pattern: ^#([A-Fa-f0-9]{6})$
-   - Help text: "Color secundario para gradientes (formato: #RRGGBB). Si no se especifica, se usará el color principal"
+  - Required
+  - **Help text**: "Contenido principal de la página. Usar formato rico para mejor presentación"
 
-4. `backgroundColor` (Short text)
+- "Featured Image" (Media - Image)
 
-   - Required
-   - Pattern: ^#([A-Fa-f0-9]{6})$
-   - Help text: "Color de fondo del sitio (formato: #RRGGBB)"
-   - Default: "#ffffff"
+  - Optional
+  - **Help text**: "Imagen destacada para la página. Recomendado: 1200x630px para mejor compartición en redes"
 
-5. `textColor` (Short text)
+- "Is Visible" (Boolean)
 
-   - Required
-   - Pattern: ^#([A-Fa-f0-9]{6})$
-   - Help text: "Color del texto principal (formato: #RRGGBB)"
-   - Default: "#000000"
+  - Required
+  - Default: true
+  - **Help text**: "Controla la visibilidad de la página"
 
-6. `style` (Select)
+- "Label" (Short text)
 
-   - Required
-   - Options:
-     - minimal (Sin efectos visuales)
-     - gradient (Con efectos de gradiente)
-     - glass (Efecto cristal/transparencia)
-   - Default: "gradient"
-   - Help text: "Estilo visual general del sitio"
+  - Required
+  - **Help text**: "Texto para mostrar en menús de navegación. Debe ser corto y descriptivo"
 
-7. `borderRadius` (Number)
+- "Location" (Short text)
 
-   - Optional
-   - Default: 8
-   - Help text: "Radio de borde en píxeles para elementos redondeados (0-20)"
-   - Validation: Min: 0, Max: 20
+  - Required
+  - Validations: [header, footer, blog, legal, null]
+  - **Help text**: "Ubicación del enlace en la navegación. 'null' si no debe aparecer en menús"
 
-8. `preview` (Media - Image)
-   - Optional
-   - Help text: "Vista previa del tema personalizado"
+- "Author" (Short text)
+
+  - Optional
+  - **Help text**: "Autor del contenido. Relevante para posts de blog"
+
+- "Publish Date" (Date and time)
+
+  - Optional
+  - **Help text**: "Fecha de publicación. Importante para ordenar posts de blog"
+
+- "Tags" (Short text - Array)
+  - Optional
+  - **Help text**: "Categorías o etiquetas para clasificar el contenido. Útil para filtrado y SEO"
+
+#### 🎨 Custom Theme
+
+**Content Type ID:** `customTheme` **Nombre para mostrar:** "Custom Theme" **Descripción:** Tema personalizado para la landing page.
+
+Fields:
+
+- "Name" (Short text)
+
+  - Required
+  - **Help text**: "Nombre identificativo del tema personalizado"
+
+- "Primary Color" (Short text)
+
+  - Required
+  - Pattern: ^#([A-Fa-f0-9]{6})$
+  - Default: "#7c3aed"
+  - **Help text**: "Color principal para botones y elementos destacados (formato: #RRGGBB)"
+
+- "Accent Color" (Short text)
+
+  - Optional
+  - Pattern: ^#([A-Fa-f0-9]{6})$
+  - **Help text**: "Color secundario para gradientes. Si no se especifica, se usará el color principal"
+
+- "Background Color" (Short text)
+
+  - Required
+  - Pattern: ^#([A-Fa-f0-9]{6})$
+  - Default: "#ffffff"
+  - **Help text**: "Color de fondo del sitio (formato: #RRGGBB)"
+
+- "Text Color" (Short text)
+
+  - Required
+  - Pattern: ^#([A-Fa-f0-9]{6})$
+  - Default: "#000000"
+  - **Help text**: "Color del texto principal (formato: #RRGGBB)"
+
+- "Style" (Short text)
+
+  - Required
+  - Default: "gradient"
+  - Validations: [minimal, gradient, glass]
+  - **Help text**: "Estilo visual: 'minimal' (sin efectos), 'gradient' (con gradientes), 'glass' (efecto cristal)"
+
+- "Border Radius" (Number)
+
+  - Optional
+  - Default: 8
+  - Validation: Min: 0, Max: 20
+  - **Help text**: "Radio de borde en píxeles para elementos redondeados (0-20)"
+
+- "Preview" (Media - Image)
+  - Optional
+  - **Help text**: "Vista previa del tema personalizado para referencia"
